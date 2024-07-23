@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.9.34723.18
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EmployeeGrievanceRedressal", "EmployeeGrievanceRedressal\EmployeeGrievanceRedressal.csproj", "{95CDA3FC-D553-4F17-A2C9-C3AF522C2862}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EmployeeGrievanceRedressalTests", "EmployeeGrievanceRedressalTests\EmployeeGrievanceRedressalTests.csproj", "{D63F48AD-25DF-4AA1-91BD-D911A0959A36}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{95CDA3FC-D553-4F17-A2C9-C3AF522C2862}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{95CDA3FC-D553-4F17-A2C9-C3AF522C2862}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{95CDA3FC-D553-4F17-A2C9-C3AF522C2862}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{95CDA3FC-D553-4F17-A2C9-C3AF522C2862}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D63F48AD-25DF-4AA1-91BD-D911A0959A36}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D63F48AD-25DF-4AA1-91BD-D911A0959A36}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D63F48AD-25DF-4AA1-91BD-D911A0959A36}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D63F48AD-25DF-4AA1-91BD-D911A0959A36}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {004BFB1D-5227-430C-868D-04612F86EBF5}
+	EndGlobalSection
+EndGlobal
