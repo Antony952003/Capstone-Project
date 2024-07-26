@@ -147,3 +147,6 @@ C:\Users\VC\Desktop\Capstone Project\EmployeeGrievanceRedressalSolution\Employee
 C:\Users\VC\Desktop\Capstone Project\EmployeeGrievanceRedressalSolution\EmployeeGrievanceRedressalTests\obj\Debug\net6.0\EmployeeGrievanceRedressalTests.pdb
 C:\Users\VC\Desktop\Capstone Project\EmployeeGrievanceRedressalSolution\EmployeeGrievanceRedressalTests\obj\Debug\net6.0\EmployeeGrievanceRedressalTests.genruntimeconfig.cache
 C:\Users\VC\Desktop\Capstone Project\EmployeeGrievanceRedressalSolution\EmployeeGrievanceRedressalTests\obj\Debug\net6.0\ref\EmployeeGrievanceRedressalTests.dll
+C:\Users\VC\Desktop\Capstone Project\EmployeeGrievanceRedressalSolution\EmployeeGrievanceRedressalTests\bin\Debug\net6.0\Microsoft.AspNetCore.Authentication.JwtBearer.dll
+C:\Users\VC\Desktop\Capstone Project\EmployeeGrievanceRedressalSolution\EmployeeGrievanceRedressalTests\bin\Debug\net6.0\Microsoft.IdentityModel.Abstractions.dll
+C:\Users\VC\Desktop\Capstone Project\EmployeeGrievanceRedressalSolution\EmployeeGrievanceRedressalTests\bin\Debug\net6.0\BCrypt.Net-Next.dll

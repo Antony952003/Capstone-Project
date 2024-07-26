@@ -29,11 +29,15 @@ namespace EmployeeGrievanceRedressal.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("ApprovalRequestId"), 1L, 1);
 
-                    b.Property<DateTime>("DateRequested")
-                        .HasColumnType("datetime2");
-
                     b.Property<int>("EmployeeId")
                         .HasColumnType("int");
+
+                    b.Property<string>("Reason")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<DateTime>("RequestDate")
+                        .HasColumnType("datetime2");
 
                     b.Property<int>("Status")
                         .HasColumnType("int");
@@ -131,6 +135,9 @@ namespace EmployeeGrievanceRedressal.Migrations
                     b.Property<int>("Status")
                         .HasColumnType("int");
 
+                    b.Property<int>("Type")
+                        .HasColumnType("int");
+
                     b.HasKey("GrievanceId");
 
                     b.HasIndex("EmployeeId");
@@ -152,6 +159,13 @@ namespace EmployeeGrievanceRedressal.Migrations
                         .HasColumnType("datetime2");
 
                     b.Property<int>("GrievanceId")
+                        .HasColumnType("int");
+
+                    b.Property<string>("HistoryType")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<int?>("RelatedEntityId")
                         .HasColumnType("int");
 
                     b.Property<string>("StatusChange")
@@ -183,6 +197,10 @@ namespace EmployeeGrievanceRedressal.Migrations
                     b.Property<int>("GrievanceId")
                         .HasColumnType("int");
 
+                    b.Property<string>("SolutionTitle")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
                     b.Property<int?>("SolverId")
                         .IsRequired()
                         .HasColumnType("int");
@@ -211,10 +229,17 @@ namespace EmployeeGrievanceRedressal.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
+                    b.Property<int?>("GrievanceType")
+                        .HasColumnType("int");
+
                     b.Property<bool>("IsApproved")
                         .HasColumnType("bit");
 
                     b.Property<string>("Name")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("PasswordHash")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 

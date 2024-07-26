@@ -1,7 +1,12 @@
 {
   "Version": 1,
   "WorkspaceRootPath": "C:\\Users\\VC\\Desktop\\Capstone Project\\EmployeeGrievanceRedressalSolution\\",
-  "Documents": [],
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{95CDA3FC-D553-4F17-A2C9-C3AF522C2862}|EmployeeGrievanceRedressal\\EmployeeGrievanceRedressal.csproj|c:\\users\\vc\\desktop\\capstone project\\employeegrievanceredressalsolution\\employeegrievanceredressal\\services\\grievancehistoryservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{95CDA3FC-D553-4F17-A2C9-C3AF522C2862}|EmployeeGrievanceRedressal\\EmployeeGrievanceRedressal.csproj|solutionrelative:employeegrievanceredressal\\services\\grievancehistoryservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
   "DocumentGroupContainers": [
     {
       "Orientation": 1,
@@ -9,7 +14,7 @@
       "DocumentGroups": [
         {
           "DockedHeight": 200,
-          "SelectedChildIndex": -1,
+          "SelectedChildIndex": 4,
           "Children": [
             {
               "$type": "Bookmark",
@@ -22,6 +27,23 @@
             {
               "$type": "Bookmark",
               "Name": "ST:0:0:{320fd13f-632f-4b16-9527-a1adfe555f6c}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{0ad07096-bba9-4900-a651-0598d26f6d24}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "GrievanceHistoryService.cs",
+              "DocumentMoniker": "C:\\Users\\VC\\Desktop\\Capstone Project\\EmployeeGrievanceRedressalSolution\\EmployeeGrievanceRedressal\\Services\\GrievanceHistoryService.cs",
+              "RelativeDocumentMoniker": "EmployeeGrievanceRedressal\\Services\\GrievanceHistoryService.cs",
+              "ToolTip": "C:\\Users\\VC\\Desktop\\Capstone Project\\EmployeeGrievanceRedressalSolution\\EmployeeGrievanceRedressal\\Services\\GrievanceHistoryService.cs",
+              "RelativeToolTip": "EmployeeGrievanceRedressal\\Services\\GrievanceHistoryService.cs",
+              "ViewState": "AQIAAAsAAAAAAAAAAAAAwBcAAAAyAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-07-25T12:39:43.726Z",
+              "EditorCaption": ""
             }
           ]
         }

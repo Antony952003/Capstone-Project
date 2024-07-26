@@ -67,3 +67,6 @@ C:\Users\VC\Desktop\Capstone Project\EmployeeGrievanceRedressalSolution\Employee
 C:\Users\VC\Desktop\Capstone Project\EmployeeGrievanceRedressalSolution\EmployeeGrievanceRedressal\bin\Debug\net6.0\runtimes\win\lib\netstandard2.0\System.Runtime.Caching.dll
 C:\Users\VC\Desktop\Capstone Project\EmployeeGrievanceRedressalSolution\EmployeeGrievanceRedressal\bin\Debug\net6.0\runtimes\win\lib\netstandard2.0\System.Security.Cryptography.ProtectedData.dll
 C:\Users\VC\Desktop\Capstone Project\EmployeeGrievanceRedressalSolution\EmployeeGrievanceRedressal\bin\Debug\net6.0\runtimes\win\lib\netcoreapp3.0\System.Windows.Extensions.dll
+C:\Users\VC\Desktop\Capstone Project\EmployeeGrievanceRedressalSolution\EmployeeGrievanceRedressal\bin\Debug\net6.0\Microsoft.AspNetCore.Authentication.JwtBearer.dll
+C:\Users\VC\Desktop\Capstone Project\EmployeeGrievanceRedressalSolution\EmployeeGrievanceRedressal\bin\Debug\net6.0\Microsoft.IdentityModel.Abstractions.dll
+C:\Users\VC\Desktop\Capstone Project\EmployeeGrievanceRedressalSolution\EmployeeGrievanceRedressal\bin\Debug\net6.0\BCrypt.Net-Next.dll

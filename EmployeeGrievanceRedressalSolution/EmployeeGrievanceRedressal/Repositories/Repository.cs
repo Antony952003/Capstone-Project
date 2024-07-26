@@ -1,5 +1,5 @@
 ﻿using EmployeeGrievanceRedressal.Exceptions;
-using EmployeeGrievanceRedressal.Interfaces;
+using EmployeeGrievanceRedressal.Interfaces.RepositoryInterfaces;
 using Microsoft.EntityFrameworkCore;
 
 namespace EmployeeGrievanceRedressal.Repositories
@@ -34,8 +34,8 @@ namespace EmployeeGrievanceRedressal.Repositories
         {
             try
             {
-                var allentities =  await _context.Set<T>().ToListAsync();
-                if(allentities.Count == 0)
+                var allentities = await _context.Set<T>().ToListAsync();
+                if (allentities.Count == 0)
                 {
                     throw new EntityNotFoundException("No Entities are found !!");
                 }

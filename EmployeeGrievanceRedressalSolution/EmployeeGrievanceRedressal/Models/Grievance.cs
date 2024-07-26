@@ -10,6 +10,7 @@
         public string Description { get; set; }
         public DateTime DateRaised { get; set; }
         public string Priority { get; set; }
+        public GrievanceType Type { get; set; }
         public GrievanceStatus Status { get; set; }
         public List<Solution> Solutions { get; set; }
         public List<DocumentUrl> DocumentUrls { get; set; }
@@ -28,7 +29,8 @@
         Open,
         InProgress,
         Resolved,
-        Closed
+        Closed,
+        Escalated
     }
 
 

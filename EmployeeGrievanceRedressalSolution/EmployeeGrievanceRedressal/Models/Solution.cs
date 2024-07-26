@@ -7,6 +7,7 @@
         public Grievance Grievance { get; set; }
         public int? SolverId { get; set; }
         public User Solver { get; set; }
+        public string SolutionTitle { get; set; }
         public string Description { get; set; }
         public DateTime DateProvided { get; set; }
         public Feedback Feedback { get; set; }

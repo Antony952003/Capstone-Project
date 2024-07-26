@@ -1,5 +1,5 @@
 ﻿using EmployeeGrievanceRedressal.Exceptions;
-using EmployeeGrievanceRedressal.Interfaces;
+using EmployeeGrievanceRedressal.Interfaces.RepositoryInterfaces;
 using EmployeeGrievanceRedressal.Models;
 using Microsoft.EntityFrameworkCore;
 

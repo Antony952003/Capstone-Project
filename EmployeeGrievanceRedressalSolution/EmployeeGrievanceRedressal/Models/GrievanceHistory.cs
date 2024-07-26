@@ -7,6 +7,9 @@
         public Grievance Grievance { get; set; }
         public string StatusChange { get; set; }
         public DateTime DateChanged { get; set; }
+
+        public string HistoryType { get; set; } // e.g., "Solution", "Feedback"
+        public int? RelatedEntityId { get; set; }
     }
 
 

@@ -1,5 +1,5 @@
 ﻿using EmployeeGrievanceRedressal.Exceptions;
-using EmployeeGrievanceRedressal.Interfaces;
+using EmployeeGrievanceRedressal.Interfaces.RepositoryInterfaces;
 using EmployeeGrievanceRedressal.Models;
 using Microsoft.EntityFrameworkCore;
 
@@ -28,6 +28,10 @@ namespace EmployeeGrievanceRedressal.Repositories
             {
                 throw new RepositoryException("Error getting user with grievances", ex);
             }
+        }
+        public async Task<User> GetByEmailAsync(string email)
+        {
+            return await _context.Users.FirstOrDefaultAsync(u => u.Email == email);
         }
 
         public async Task<User> GetUserWithFeedbacksAsync(int id)
