@@ -5,8 +5,10 @@
         public int GrievanceId { get; set; }
         public int EmployeeId { get; set; }
         public string EmployeeName { get; set; }
+        public string EmployeeImage { get; set; }
         public int? SolverId { get; set; }
         public string SolverName { get; set; }
+        public string Title { get; set; }
         public string Description { get; set; }
         public DateTime DateRaised { get; set; }
         public string Priority { get; set; }

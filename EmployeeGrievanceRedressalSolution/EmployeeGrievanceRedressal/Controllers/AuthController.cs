@@ -40,5 +40,17 @@ namespace EmployeeGrievanceRedressal.Controllers
             }
             return Ok(new { Token = result.Token, User = result.User });
         }
+        [HttpPost("CheckUsernameAvailablity")]
+        public async Task<string> checknameavailable(string name)
+        {
+            var result = await _authService.CheckUsernameAvailablity(name);
+            return result;
+        }
+        [HttpPost("CheckUsermailAvailablity")]
+        public async Task<string> checkmailavailable(string mail)
+        {
+            var result = await _authService.CheckUsermailAvailablity(mail);
+            return result;
+        }
     }
 }

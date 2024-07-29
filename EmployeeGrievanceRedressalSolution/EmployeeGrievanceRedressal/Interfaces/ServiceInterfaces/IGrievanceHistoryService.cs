@@ -6,7 +6,7 @@ namespace EmployeeGrievanceRedressal.Interfaces.ServiceInterfaces
 {
     public interface IGrievanceHistoryService
     {
-        Task<GrievanceHistoryDTO> RecordHistoryAsync(int grievanceId, string statusChange);
+        Task<GrievanceHistoryDTO> RecordHistoryAsync(GrievanceHistory history);
         Task<IEnumerable<GrievanceHistoryDTO>> GetGrievanceHistoryAsync(int grievanceId);
     }
 }

@@ -8,6 +8,7 @@ using EmployeeGrievanceRedressal.Models.DTOs.User;
 using System;
 using System.Collections.Generic;
 using System.Threading.Tasks;
+using System.Xml.Linq;
 
 namespace EmployeeGrievanceRedressal.Services
 {
@@ -80,6 +81,7 @@ namespace EmployeeGrievanceRedressal.Services
             }
         }
 
+
         // Mapping methods
         private User MapToUser(UserRegisterDTO model)
         {
@@ -111,6 +113,26 @@ namespace EmployeeGrievanceRedressal.Services
                 Role = user.Role.ToString(),
                 IsApproved = user.IsApproved
             };
+        }
+
+        public async Task<string> CheckUsernameAvailablity(string name)
+        {
+            var user = await _userRepository.GetByNameAsync(name);
+            if(user != null)
+            {
+                return "NotAvailable";
+            }
+            return "Available";
+        }
+
+        public async Task<string> CheckUsermailAvailablity(string mail)
+        {
+            var user = await _userRepository.GetByEmailAsync(mail);
+            if (user != null)
+            {
+                return "NotAvailable";
+            }
+            return "Available";
         }
     }
 }

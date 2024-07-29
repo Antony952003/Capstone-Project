@@ -29,10 +29,6 @@ namespace EmployeeGrievanceRedressal.Repositories
                 throw new RepositoryException("Error getting user with grievances", ex);
             }
         }
-        public async Task<User> GetByEmailAsync(string email)
-        {
-            return await _context.Users.FirstOrDefaultAsync(u => u.Email == email);
-        }
 
         public async Task<User> GetUserWithFeedbacksAsync(int id)
         {
@@ -53,6 +49,32 @@ namespace EmployeeGrievanceRedressal.Repositories
             {
                 throw new RepositoryException("Error getting user with feedbacks", ex);
             }
+        }
+
+        public async Task<User> GetByNameAsync(string name)
+        {
+            return await _context.Users.FirstOrDefaultAsync(u => u.Name == name);
+        }
+        public async Task<User> GetByEmailAsync(string email)
+        {
+            return await _context.Users.FirstOrDefaultAsync(u => u.Email == email);
+        }
+
+        public async Task<User> RemoveUserById(int id)
+        {
+            var employee = await _context.Users
+        .FirstOrDefaultAsync(e => e.UserId == id);
+            var approvalrequestsofemployee = await _context.ApprovalRequests.ToListAsync();
+            approvalrequestsofemployee = approvalrequestsofemployee.FindAll(x => x.EmployeeId == id);
+            foreach (var item in approvalrequestsofemployee)
+            {
+                _context.ApprovalRequests.Remove(item);
+                _context.SaveChanges();
+            }
+            _context.Users.Remove(employee);
+            _context.SaveChanges();
+            return employee;
+
         }
     }
 

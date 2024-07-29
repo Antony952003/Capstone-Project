@@ -7,6 +7,7 @@
         public User Employee { get; set; }
         public int? SolverId { get; set; }
         public User Solver { get; set; }
+        public string  Title { get; set; }
         public string Description { get; set; }
         public DateTime DateRaised { get; set; }
         public string Priority { get; set; }

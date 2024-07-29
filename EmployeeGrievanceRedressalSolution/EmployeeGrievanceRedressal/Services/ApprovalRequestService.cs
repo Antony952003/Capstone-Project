@@ -31,7 +31,7 @@ namespace EmployeeGrievanceRedressal.Services
 
             // Check if there's already a pending or approved approval request for this employee
             var existingRequest = await _approvalRequestRepository.GetAllAsync();
-            if (existingRequest.Any(r => r.EmployeeId == employeeId && (r.Status == ApprovalStatus.Pending || r.Status == ApprovalStatus.Approved)))
+            if (employee.IsApproved == true)
             {
                 throw new InvalidOperationException("An approval request is already pending or approved for this employee.");
             }

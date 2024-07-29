@@ -135,6 +135,10 @@ namespace EmployeeGrievanceRedressal.Migrations
                     b.Property<int>("Status")
                         .HasColumnType("int");
 
+                    b.Property<string>("Title")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
                     b.Property<int>("Type")
                         .HasColumnType("int");
 
@@ -177,6 +181,39 @@ namespace EmployeeGrievanceRedressal.Migrations
                     b.HasIndex("GrievanceId");
 
                     b.ToTable("GrievanceHistories");
+                });
+
+            modelBuilder.Entity("EmployeeGrievanceRedressal.Models.Rating", b =>
+                {
+                    b.Property<int>("RatingId")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("RatingId"), 1L, 1);
+
+                    b.Property<string>("Comment")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<DateTime>("DateProvided")
+                        .HasColumnType("datetime2");
+
+                    b.Property<int>("GrievanceId")
+                        .HasColumnType("int");
+
+                    b.Property<int>("RatingValue")
+                        .HasColumnType("int");
+
+                    b.Property<int>("SolverId")
+                        .HasColumnType("int");
+
+                    b.HasKey("RatingId");
+
+                    b.HasIndex("GrievanceId");
+
+                    b.HasIndex("SolverId");
+
+                    b.ToTable("Ratings");
                 });
 
             modelBuilder.Entity("EmployeeGrievanceRedressal.Models.Solution", b =>
@@ -222,6 +259,9 @@ namespace EmployeeGrievanceRedressal.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("UserId"), 1L, 1);
 
+                    b.Property<decimal>("AverageRating")
+                        .HasColumnType("decimal(18,2)");
+
                     b.Property<DateTime>("DOB")
                         .HasColumnType("datetime2");
 
@@ -233,6 +273,9 @@ namespace EmployeeGrievanceRedressal.Migrations
                         .HasColumnType("int");
 
                     b.Property<bool>("IsApproved")
+                        .HasColumnType("bit");
+
+                    b.Property<bool>("IsAvailable")
                         .HasColumnType("bit");
 
                     b.Property<string>("Name")
@@ -332,6 +375,25 @@ namespace EmployeeGrievanceRedressal.Migrations
                     b.Navigation("Grievance");
                 });
 
+            modelBuilder.Entity("EmployeeGrievanceRedressal.Models.Rating", b =>
+                {
+                    b.HasOne("EmployeeGrievanceRedressal.Models.Grievance", "Grievance")
+                        .WithMany()
+                        .HasForeignKey("GrievanceId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("EmployeeGrievanceRedressal.Models.User", "Solver")
+                        .WithMany("Ratings")
+                        .HasForeignKey("SolverId")
+                        .OnDelete(DeleteBehavior.Restrict)
+                        .IsRequired();
+
+                    b.Navigation("Grievance");
+
+                    b.Navigation("Solver");
+                });
+
             modelBuilder.Entity("EmployeeGrievanceRedressal.Models.Solution", b =>
                 {
                     b.HasOne("EmployeeGrievanceRedressal.Models.Grievance", "Grievance")
@@ -373,6 +435,8 @@ namespace EmployeeGrievanceRedressal.Migrations
                     b.Navigation("Feedbacks");
 
                     b.Navigation("RaisedGrievances");
+
+                    b.Navigation("Ratings");
 
                     b.Navigation("Solutions");
                 });

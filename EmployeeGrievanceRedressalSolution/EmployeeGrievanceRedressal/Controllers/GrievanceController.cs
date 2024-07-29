@@ -42,6 +42,29 @@ namespace EmployeeGrievanceRedressal.Controllers
             }
         }
 
+        [HttpGet("GetAllGrievances")]
+        [Authorize(Roles = "Admin")]
+        public async Task<IActionResult> GetAllGrievances()
+        {
+            try
+            {
+                var grievances = await _grievanceService.GetAllGrievancesAsync();
+                return Ok(grievances);
+            }
+            catch (EntityNotFoundException ex)
+            {
+                return NotFound(new { Message = ex.Message });
+            }
+            catch (ServiceException ex)
+            {
+                return BadRequest(new { Message = ex.Message });
+            }
+            catch (Exception ex)
+            {
+                return StatusCode(500, new { Message = "An unexpected error occurred.", Details = ex.Message });
+            }
+        }
+
         [HttpPut("CloseGrievance")]
         [Authorize(Roles = "Admin")]
         public async Task<IActionResult> CloseGrievance(int id)

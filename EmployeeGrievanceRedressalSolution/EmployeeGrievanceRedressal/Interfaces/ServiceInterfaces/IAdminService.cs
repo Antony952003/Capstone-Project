@@ -12,5 +12,10 @@ namespace EmployeeGrievanceRedressal.Interfaces.ServiceInterfaces
         Task<IEnumerable<SolverDTO>> GetAllSolversAsync();
         Task<IEnumerable<UserDTO>> GetAllEmployeesAsync();
         Task<UserDTO> AssignRoleAsync(AssignRoleDTO assignRoleDTO);
+        Task<UserDTO> GetEmployeeById(int employeeid);
+        Task<SolverDTO> GetSolverById(int solverid);
+        Task<UserDTO> DisApproveEmployeeById(int employeeid);
+        Task<UserDTO> DeleteEmployeeById(int employeeid);
+        Task<SolverDTO> ChangeDepartmentBySolverId(int solverid, string grievancedepartmenttype);
     }
 }

@@ -15,16 +15,19 @@ namespace EmployeeGrievanceRedressal.Services
         private readonly IGrievanceRepository _grievanceRepository;
         private readonly IUserRepository _userRepository;
         private readonly IGrievanceHistoryService _grievanceHistoryService;
+        private readonly IHttpContextAccessor _httpContextAccessor;
         private readonly EmployeeGrievanceContext _context;
 
         public GrievanceService(IGrievanceRepository grievanceRepository, IUserRepository userRepository,
             EmployeeGrievanceContext context,
-            IGrievanceHistoryService grievanceHistoryService)
+            IGrievanceHistoryService grievanceHistoryService,
+            IHttpContextAccessor httpContextAccessor)
         {
             _grievanceRepository = grievanceRepository;
             _userRepository = userRepository;
             _grievanceHistoryService = grievanceHistoryService;
             _context = context;
+            _httpContextAccessor = httpContextAccessor;
         }
 
         public async Task<IEnumerable<GrievanceDTO>> GetAllEmployeeGrievancesAsync(int employeeId)
@@ -78,11 +81,31 @@ namespace EmployeeGrievanceRedressal.Services
                 DateRaised = DateTime.UtcNow,
                 Priority = model.Priority,
                 Status = GrievanceStatus.Open,
+                Title = model.Title,
                 Type = grievanceType,
                 DocumentUrls = model.DocumentUrls.Select(url => new DocumentUrl { Url = url }).ToList()
             };
 
             await _grievanceRepository.Add(grievance);
+
+            var user = _httpContextAccessor.HttpContext.User;
+            var userId = Convert.ToInt32(user.FindFirst("uid")?.Value);
+            if (userId == null)
+            {
+                throw new EntityNotFoundException("User not found!!");
+            }
+            var Employeeuser = await _userRepository.GetByIdAsync(userId);
+
+            var history = new GrievanceHistory
+            {
+                GrievanceId = grievance.GrievanceId,
+                HistoryType = "Raised Grievance",
+                RelatedEntityId = null,
+                DateChanged = DateTime.UtcNow,
+                StatusChange = $"Grievance is Raised by {Employeeuser.Name}",
+                
+            };
+            var historyDto = await _grievanceHistoryService.RecordHistoryAsync(history);
 
             return MapToGrievanceDTO(grievance);
         }
@@ -107,12 +130,33 @@ namespace EmployeeGrievanceRedressal.Services
                 throw new InvalidOperationException("Invalid solver.");
             }
 
+            if(solver.IsAvailable == false)
+            {
+                throw new Exception("Solver already assigned to a grievance");
+            }
+            if(grievance.Status == GrievanceStatus.Escalated)
+            {
+                var existingsolver = await _userRepository.GetByIdAsync((int)grievance.SolverId);
+                existingsolver.IsAvailable = true;
+                _userRepository.Update(existingsolver);
+            }
+
             grievance.SolverId = solverId;
             grievance.Status = GrievanceStatus.InProgress;
             _grievanceRepository.Update(grievance);
-            var grievanceDTO = await _grievanceRepository.GetGrievanceWithSolver(grievanceId);
-            var historyDto = await _grievanceHistoryService.RecordHistoryAsync(grievanceId, $"Grievance By : {grievanceDTO.EmployeeName} is assigned to solver : {grievanceDTO.SolverName}");
 
+            solver.IsAvailable = false;
+            _userRepository.Update(solver);
+            var grievanceDTO = await _grievanceRepository.GetGrievanceWithSolver(grievanceId);
+            var history = new GrievanceHistory
+            {
+                GrievanceId = grievance.GrievanceId,
+                HistoryType = "Assign Grievance",
+                RelatedEntityId = null,
+                DateChanged = DateTime.UtcNow,
+                StatusChange = $"Grievance is Assigned to {grievanceDTO.SolverName}",
+            };
+            var historyDto = await _grievanceHistoryService.RecordHistoryAsync(history);
 
             return grievanceDTO;
         }
@@ -122,7 +166,9 @@ namespace EmployeeGrievanceRedressal.Services
             {
                 GrievanceId = grievance.GrievanceId,
                 EmployeeId = grievance.EmployeeId,
-                EmployeeName = grievance.Employee?.Name,  // Safe navigation operator
+                EmployeeName = grievance.Employee?.Name,
+                EmployeeImage= grievance.Employee?.UserImage,
+                Title = grievance.Title,// Safe navigation operator
                 SolverId = grievance.SolverId, // No need to check if SolverId is null
                 SolverName = grievance.Solver?.Name,  // Safe navigation operator
                 Description = grievance.Description,
@@ -157,7 +203,16 @@ namespace EmployeeGrievanceRedressal.Services
 
                 grievance.Status = GrievanceStatus.Resolved;
                 _grievanceRepository.Update(grievance);
-                await _grievanceHistoryService.RecordHistoryAsync(grievanceId, $"Grievance has been resolved");
+                var grievanceDTO = await _grievanceRepository.GetGrievanceWithSolver(grievanceId);
+                var history = new GrievanceHistory
+                {
+                    GrievanceId = grievance.GrievanceId,
+                    HistoryType = "Grievance Resolved",
+                    RelatedEntityId = null,
+                    DateChanged = DateTime.UtcNow,
+                    StatusChange = $"Grievance has been resolved by {grievanceDTO.SolverName}",
+                };
+                var historyDto = await _grievanceHistoryService.RecordHistoryAsync(history);
 
                 var returngrievance = await _grievanceRepository.GetGrievanceWithSolver(grievanceId);
                 return returngrievance;
@@ -197,9 +252,27 @@ namespace EmployeeGrievanceRedressal.Services
                     grievance.Status = GrievanceStatus.Closed;
                     _grievanceRepository.Update(grievance);
 
+                    var solver = await _userRepository.GetByIdAsync((int)grievance.SolverId);
+                    solver.IsAvailable = true;
+                    _userRepository.Update(solver);
                     var grievancedto = await _grievanceRepository.GetGrievanceWithSolver(grievanceId);
+                    var user = _httpContextAccessor.HttpContext.User;
+                    var userId = Convert.ToInt32(user.FindFirst("uid")?.Value);
+                    if (userId == null)
+                    {
+                        throw new EntityNotFoundException("User not found!!");
+                    }
+                    var adminuser = await _userRepository.GetByIdAsync(userId);
 
-                    await _grievanceHistoryService.RecordHistoryAsync(grievanceId, "Grievance closed by admin");
+                    var history = new GrievanceHistory
+                    {
+                        GrievanceId = grievance.GrievanceId,
+                        HistoryType = "Closed Grievance",
+                        RelatedEntityId = null,
+                        DateChanged = DateTime.UtcNow,
+                        StatusChange = $"Grievance is Closed by {adminuser.Name}",
+                    };
+                    var historyDto = await _grievanceHistoryService.RecordHistoryAsync(history);
 
                     // Commit transaction
                     await transaction.CommitAsync();
@@ -242,8 +315,23 @@ namespace EmployeeGrievanceRedressal.Services
                     var grievancedto = await _grievanceRepository.GetGrievanceWithSolver(grievance.GrievanceId);
 
 
-                    await _grievanceHistoryService.RecordHistoryAsync(grievance.GrievanceId, $"Grievance escalated by solver({grievancedto.SolverName}). Reason: " + model.Reason);
+                    var user = _httpContextAccessor.HttpContext.User;
+                    var userId = Convert.ToInt32(user.FindFirst("uid")?.Value);
+                    if (userId == null)
+                    {
+                        throw new EntityNotFoundException("User not found!!");
+                    }
+                    var solveruser = await _userRepository.GetByIdAsync(userId);
 
+                    var history = new GrievanceHistory
+                    {
+                        GrievanceId = grievance.GrievanceId,
+                        HistoryType = "Escalated Grievance",
+                        RelatedEntityId = null,
+                        DateChanged = DateTime.UtcNow,
+                        StatusChange = $"Grievance is Escalated by {solveruser.Name}",
+                    };
+                    var historyDto = await _grievanceHistoryService.RecordHistoryAsync(history);
                     await transaction.CommitAsync();
 
                     return grievancedto;

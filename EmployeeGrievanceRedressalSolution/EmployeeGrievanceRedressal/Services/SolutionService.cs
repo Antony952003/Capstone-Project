@@ -91,7 +91,15 @@ namespace EmployeeGrievanceRedressal.Services
                     DateProvided = solution.DateProvided,
                     DocumentUrls = solution.DocumentUrls.Select(d => d.Url).ToList()
                 };
-                var historyDto = await _grievanceHistoryService.RecordHistoryAsync(solution.GrievanceId, $"Solution {solutiondto.Description} is been Provided");
+                var history = new GrievanceHistory
+                {
+                    GrievanceId = solution.GrievanceId,
+                    HistoryType = "Solution",
+                    RelatedEntityId = solution.SolutionId,
+                    DateChanged = DateTime.UtcNow,
+                    StatusChange = $"Solution Title : {solution.SolutionTitle} \n Solution Description : {solution.Description}",
+                };
+                var historyDto = await _grievanceHistoryService.RecordHistoryAsync(history);
                 return solutiondto;
 
             }

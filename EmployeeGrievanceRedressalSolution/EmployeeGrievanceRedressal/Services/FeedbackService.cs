@@ -66,8 +66,16 @@ namespace EmployeeGrievanceRedressal.Services
                     Comments = feedback.Comments,
                     DateProvided = feedback.DateProvided
                 };
-                var historyDto = await _grievanceHistoryService.RecordHistoryAsync(solution.GrievanceId, $"Feedback for solution {solution.SolutionTitle} has been provided " +
-                    $"Feedback : {feedback.Comments} By {employee.Name}");
+                var history = new GrievanceHistory
+                {
+                    GrievanceId = solution.GrievanceId,
+                    HistoryType = "Feedback",
+                    RelatedEntityId = feedback.SolutionId,
+                    DateChanged = DateTime.UtcNow,
+                    StatusChange = $"Feedback Description : {feedback.Comments}",
+                };
+                var historyDto = await _grievanceHistoryService.RecordHistoryAsync(history);
+               
                 return feedbackdto;
             }
             catch (Exception ex)

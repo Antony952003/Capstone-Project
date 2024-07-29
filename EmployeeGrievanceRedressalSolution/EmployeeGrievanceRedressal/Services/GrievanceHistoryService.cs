@@ -17,26 +17,28 @@ namespace EmployeeGrievanceRedressal.Services
             _grievanceHistoryRepository = grievanceHistoryRepository;
         }
 
-        public async Task<GrievanceHistoryDTO> RecordHistoryAsync(int grievanceId, string statusChange)
+        public async Task<GrievanceHistoryDTO> RecordHistoryAsync(GrievanceHistory history)
         {
             try
             {
-                var history = new GrievanceHistory
+                var grievancehistory = new GrievanceHistory
                 {
-                    GrievanceId = grievanceId,
-                    StatusChange = statusChange,
+                    GrievanceId = history.GrievanceId,
+                    StatusChange = history.StatusChange,
                     DateChanged = DateTime.UtcNow,
-
+                    HistoryType = history.HistoryType,
+                    RelatedEntityId = history.RelatedEntityId,
                 };
 
-                await _grievanceHistoryRepository.Add(history);
+                await _grievanceHistoryRepository.Add(grievancehistory);
 
                 return new GrievanceHistoryDTO
                 {
-                    GrievanceHistoryId = history.GrievanceHistoryId,
-                    StatusChange = statusChange,
-                    DateChanged = history.DateChanged,
-                    GrievanceId = history.GrievanceId,
+                    GrievanceId = grievancehistory.GrievanceId,
+                    StatusChange = grievancehistory.StatusChange,
+                    DateChanged = grievancehistory.DateChanged,
+                    HistoryType = grievancehistory.HistoryType,
+                    RelatedEntityId = grievancehistory.RelatedEntityId,
                 };
             }
             catch (Exception ex)
@@ -54,13 +56,16 @@ namespace EmployeeGrievanceRedressal.Services
                     throw new EntityNotFoundException("There is no Grievance history found!!");
                 }
 
-                return histories.Where(x => x.GrievanceId == grievanceId).OrderBy(h => h.DateChanged)
+                return histories.Where(x => x.GrievanceId == grievanceId)
+                                .OrderBy(h => h.DateChanged)
                                 .Select(h => new GrievanceHistoryDTO
                                 {
                                     GrievanceHistoryId = h.GrievanceHistoryId,
                                     GrievanceId = h.GrievanceId,
                                     StatusChange = h.StatusChange,
-                                    DateChanged = h.DateChanged
+                                    DateChanged = h.DateChanged,
+                                    RelatedEntityId= h.RelatedEntityId,
+                                    HistoryType = h.HistoryType,
                                 });
             }
             catch(EntityNotFoundException ex)

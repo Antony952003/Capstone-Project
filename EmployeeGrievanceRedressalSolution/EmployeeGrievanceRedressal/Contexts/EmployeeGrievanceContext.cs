@@ -12,9 +12,20 @@ public class EmployeeGrievanceContext : DbContext
     public DbSet<Feedback> Feedbacks { get; set; }
     public DbSet<ApprovalRequest> ApprovalRequests { get; set; }
     public DbSet<GrievanceHistory> GrievanceHistories { get; set; }
+    public DbSet<Rating> Ratings { get; set; }
 
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
+
+        modelBuilder.Entity<Rating>()
+            .HasKey(r => r.RatingId);
+
+        modelBuilder.Entity<Rating>()
+            .HasOne(r => r.Solver)
+            .WithMany(u => u.Ratings)
+            .HasForeignKey(r => r.SolverId)
+            .OnDelete(DeleteBehavior.Restrict);
+
         // Configure the relationship between User and Grievance as Employee
         modelBuilder.Entity<User>()
             .HasMany(u => u.RaisedGrievances)

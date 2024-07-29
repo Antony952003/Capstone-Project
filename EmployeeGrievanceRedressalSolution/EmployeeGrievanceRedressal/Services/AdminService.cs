@@ -55,7 +55,7 @@ namespace EmployeeGrievanceRedressal.Services
         public async Task<IEnumerable<UserDTO>> GetAllEmployeesAsync()
         {
             var users = await _userRepository.GetAllAsync();
-            var employees = users.Where(u => u.Role == UserRole.Employee);
+            var employees = users.Where(u => u.Role == UserRole.Employee && u.IsApproved == true);
             if (!employees.Any())
             {
                 throw new EntityNotFoundException("No employees found.");
@@ -63,12 +63,18 @@ namespace EmployeeGrievanceRedressal.Services
             return employees.Select(MapToUserDTO);
         }
 
+
         public async Task<UserDTO> AssignRoleAsync(AssignRoleDTO assignRoleDTO)
         {
             var user = await _userRepository.GetByIdAsync(assignRoleDTO.UserId);
             if (user == null)
             {
                 throw new EntityNotFoundException("User not found.");
+            }
+
+            if(user.IsApproved == false)
+            {
+                throw new Exception("The user is not approved yet!!");
             }
 
             if (assignRoleDTO.Role == UserRole.Solver.ToString())
@@ -88,6 +94,7 @@ namespace EmployeeGrievanceRedressal.Services
                 if (Enum.TryParse(assignRoleDTO.Role, true, out UserRole parsedRole))
                 {
                     user.Role = parsedRole;
+                    user.GrievanceType = null;
                 }
                 else
                 {
@@ -126,8 +133,111 @@ namespace EmployeeGrievanceRedressal.Services
                 DOB = user.DOB,
                 Role = user.Role.ToString(),
                 IsApproved = user.IsApproved,
-                GrievanceDepartmentType = user.GrievanceType != null ? user.GrievanceType.ToString() : ""
+                GrievanceDepartmentType = user.GrievanceType != null ? user.GrievanceType.ToString() : "",
+                AverageRating = user.AverageRating,
+                IsAvailable = user.IsAvailable,
             };
+        }
+
+        public async Task<UserDTO> GetEmployeeById(int employeeid)
+        {
+            try
+            {
+                var employee = await _userRepository.GetByIdAsync(employeeid);
+                if(employee != null && employee.Role == UserRole.Employee)
+                {
+                    return MapToUserDTO(employee);
+                }
+                throw new EntityNotFoundException("Employee not found");
+            }
+            catch(EntityNotFoundException e)
+            {
+                throw e;
+            }
+            catch(Exception e)
+            {
+                throw new RepositoryException("Error in fetching employee", e);
+            }
+        }
+
+        public async Task<UserDTO> DisApproveEmployeeById(int employeeid)
+        {
+            try
+            {
+                var employee = await _userRepository.GetByIdAsync(employeeid);
+                if (employee != null)
+                {
+                    employee.IsApproved = false;
+                    _userRepository.Update(employee);
+                    return MapToUserDTO(employee);
+                }
+                throw new EntityNotFoundException("Employee not found");
+            }
+            catch (EntityNotFoundException e)
+            {
+                throw e;
+            }
+            catch (Exception e)
+            {
+                throw new RepositoryException("Error in fetching employee", e);
+            }
+        }
+
+        public async Task<UserDTO> DeleteEmployeeById(int employeeid)
+        {
+            try
+            {
+                var employee = await _userRepository.GetByIdAsync(employeeid);
+                if (employee != null)
+                {
+                    _userRepository.RemoveUserById(employeeid);
+                    return MapToUserDTO(employee);
+                }
+                throw new EntityNotFoundException("Employee not found");
+            }
+            catch (EntityNotFoundException e)
+            {
+                throw e;
+            }
+            catch (Exception e)
+            {
+                throw new RepositoryException("Error in fetching employee", e);
+            }
+        }
+
+        public async Task<SolverDTO> GetSolverById(int solverid)
+        {
+            try
+            {
+                var employee = await _userRepository.GetByIdAsync(solverid);
+                if (employee != null && employee.Role == UserRole.Solver)
+                {
+                    return MapToSolverDTO(employee);
+                }
+                throw new EntityNotFoundException("Employee not found");
+            }
+            catch (EntityNotFoundException e)
+            {
+                throw e;
+            }
+            catch (Exception e)
+            {
+                throw new RepositoryException("Error in fetching employee", e);
+            }
+        }
+
+        public async Task<SolverDTO> ChangeDepartmentBySolverId(int solverid, string grievancedepartmenttype)
+        {
+            var employee = await _userRepository.GetByIdAsync(solverid);
+            if(employee != null && employee.Role == UserRole.Solver)
+            {
+                if (Enum.TryParse(grievancedepartmenttype, true, out GrievanceType parsedGrievanceType)){
+                    employee.GrievanceType = parsedGrievanceType;
+                    _userRepository.Update(employee);
+                    return MapToSolverDTO(employee);
+                }
+            }
+            throw new EntityNotFoundException("Solver not found");
         }
     }
 }

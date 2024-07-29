@@ -18,11 +18,13 @@ namespace EmployeeGrievanceRedressal.Controllers
     {
         private readonly IAdminService _adminService;
         private readonly IGrievanceService _grievanceService;
+        private readonly IUserService _userService;
 
-        public AdminController(IAdminService adminService, IGrievanceService grievanceService)
+        public AdminController(IAdminService adminService, IGrievanceService grievanceService, IUserService userService)
         {
             _adminService = adminService;
             _grievanceService = grievanceService;
+            _userService = userService;
         }
 
         [HttpGet("GetAllUsers")]
@@ -97,15 +99,84 @@ namespace EmployeeGrievanceRedressal.Controllers
             {
                 return BadRequest(new { message = ex.Message });
             }
+            catch (Exception ex)
+            {
+                return StatusCode(500, new { Message = "An unexpected error occurred.", Details = ex.Message });
+            }
         }
 
-        [HttpGet("GetAllGrievances")]
-        public async Task<IActionResult> GetAllGrievances()
+        [HttpPost("DeleteUserById")]
+        public async Task<ActionResult<UserDTO>> DeleteUserById(int id)
         {
             try
             {
-                var grievances = await _grievanceService.GetAllGrievancesAsync();
+                var user = await _adminService.DeleteEmployeeById(id);
+                return Ok(user);
+            }
+            catch (EntityNotFoundException ex)
+            {
+                return NotFound(new { message = ex.Message });
+            }
+            catch (BusinessException ex)
+            {
+                return BadRequest(new { message = ex.Message });
+            }
+            catch (Exception ex)
+            {
+                return StatusCode(500, new { Message = "An unexpected error occurred.", Details = ex.Message });
+            }
+        }
+
+        [HttpGet("GetSolverById")]
+        public async Task<ActionResult<UserDTO>> GetSolverById(int id)
+        {
+            try
+            {
+                var user = await _adminService.GetSolverById(id);
+                return Ok(user);
+            }
+            catch (EntityNotFoundException ex)
+            {
+                return NotFound(new { message = ex.Message });
+            }
+            catch (BusinessException ex)
+            {
+                return BadRequest(new { message = ex.Message });
+            }
+            catch (Exception ex)
+            {
+                return StatusCode(500, new { Message = "An unexpected error occurred.", Details = ex.Message });
+            }
+        }
+
+
+
+        [HttpPost("DisApproveUserById")]
+        public async Task<IActionResult> DisApproveUserById(int id)
+        {
+            try
+            {
+                var grievances = await _adminService.DisApproveEmployeeById(id);
                 return Ok(grievances);
+            }
+            catch (EntityNotFoundException ex)
+            {
+                return NotFound(new { Message = ex.Message });
+            }
+            catch (Exception ex)
+            {
+                // Log exception details here if needed
+                return StatusCode(500, new { Message = "An unexpected error occurred.", Details = ex.Message });
+            }
+        }
+
+        [HttpGet("GetEmployeeById")]
+        public async Task<IActionResult> GetEmployeeById(int employeeid)
+        {
+            try
+            {
+                var employee = await _adminService.GetEmployeeById(employeeid);
+                return Ok(employee);
             }
             catch (EntityNotFoundException ex)
             {
@@ -166,6 +237,25 @@ namespace EmployeeGrievanceRedressal.Controllers
             {
                 var grievances = await _grievanceService.GetAllGrievancesByTypeAsync(type);
                 return Ok(grievances);
+            }
+            catch (EntityNotFoundException ex)
+            {
+                return NotFound(new { Message = ex.Message });
+            }
+            catch (Exception ex)
+            {
+                // Log exception details here if needed
+                return StatusCode(500, new { Message = "An unexpected error occurred.", Details = ex.Message });
+            }
+        }
+
+        [HttpPut("ChangeDepartmentBySolverId")]
+        public async Task<IActionResult> ChangeDepartmentBySolverId(int solverid, string departmenttype)
+        {
+            try
+            {
+                var solver = await _adminService.ChangeDepartmentBySolverId(solverid, departmenttype);
+                return Ok(solver);
             }
             catch (EntityNotFoundException ex)
             {

@@ -30,6 +30,7 @@ namespace EmployeeGrievanceRedressal
             builder.Services.AddScoped<IApprovalRequestRepository, ApprovalRequestRepository>();
             builder.Services.AddScoped<ISolutionRepository, SolutionRepository>();
             builder.Services.AddScoped<IGrievanceHistoryRepository, GrievanceHistoryRepository>();
+            builder.Services.AddScoped<IRatingRepository, RatingRepository>();
             #endregion
 
             #region Services
@@ -40,7 +41,9 @@ namespace EmployeeGrievanceRedressal
             builder.Services.AddScoped<IGrievanceService, GrievanceService>();
             builder.Services.AddScoped<ISolutionService, SolutionService>();
             builder.Services.AddScoped<IFeedbackService, FeedbackService>();
+            builder.Services.AddScoped<IUserService, UserService>();
             builder.Services.AddScoped<IGrievanceHistoryService, GrievanceHistoryService>();
+            builder.Services.AddScoped<IRatingService, RatingService>();
             #endregion
 
             // Configure JWT Authentication
@@ -59,7 +62,7 @@ namespace EmployeeGrievanceRedressal
 
             // Add Authorization
             builder.Services.AddAuthorization();
-
+            builder.Services.AddHttpContextAccessor();
             // Configure Swagger with JWT support
             builder.Services.AddSwaggerGen(c =>
             {
@@ -90,6 +93,15 @@ namespace EmployeeGrievanceRedressal
                     }
                 });
             });
+            #region Cors
+            builder.Services.AddCors(opts =>
+            {
+                opts.AddPolicy("MyCors", options =>
+                {
+                    options.AllowAnyHeader().AllowAnyMethod().AllowAnyOrigin();
+                });
+            });
+            #endregion
 
             var app = builder.Build();
 
@@ -101,6 +113,8 @@ namespace EmployeeGrievanceRedressal
             }
 
             app.UseHttpsRedirection();
+
+            app.UseCors("MyCors");
 
             // Use Authentication
             app.UseAuthentication();
