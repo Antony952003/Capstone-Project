@@ -9,5 +9,6 @@ namespace EmployeeGrievanceRedressal.Interfaces.RepositoryInterfaces
         Task<User> GetByEmailAsync(string email);
         Task<User> GetByNameAsync(string name);
         Task<User> RemoveUserById(int id);
+        Task<User> GetByRefreshTokenAsync(string refreshToken);
     }
 }

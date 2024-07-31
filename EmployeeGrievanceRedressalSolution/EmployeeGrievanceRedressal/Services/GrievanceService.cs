@@ -227,16 +227,16 @@ namespace EmployeeGrievanceRedressal.Services
             }
         }
 
-        public async Task<GrievanceDTO> CloseGrievanceAsync(int grievanceId)
+        public async Task<GrievanceDTO> CloseGrievanceAsync(CloseGrievanceDTO closeGrievanceDTO)
         {
             using (var transaction = await _context.Database.BeginTransactionAsync())
             {
                 try
                 {
-                    var grievance = await _grievanceRepository.GetByIdAsync(grievanceId);
+                    var grievance = await _grievanceRepository.GetByIdAsync(closeGrievanceDTO.GrievanceId);
                     if (grievance == null)
                     {
-                        throw new EntityNotFoundException($"Grievance with ID {grievanceId} not found.");
+                        throw new EntityNotFoundException($"Grievance with ID {closeGrievanceDTO.GrievanceId} not found.");
                     }
 
                     if(grievance.Status == GrievanceStatus.Closed)
@@ -246,7 +246,8 @@ namespace EmployeeGrievanceRedressal.Services
 
                     if (grievance.Status != GrievanceStatus.Resolved)
                     {
-                        throw new ServiceException("Grievance cannot be closed before getting resolved");
+                        if(closeGrievanceDTO.ForceClose == false)
+                            throw new ServiceException("Grievance cannot be closed before getting resolved");
                     }
 
                     grievance.Status = GrievanceStatus.Closed;
@@ -255,7 +256,7 @@ namespace EmployeeGrievanceRedressal.Services
                     var solver = await _userRepository.GetByIdAsync((int)grievance.SolverId);
                     solver.IsAvailable = true;
                     _userRepository.Update(solver);
-                    var grievancedto = await _grievanceRepository.GetGrievanceWithSolver(grievanceId);
+                    var grievancedto = await _grievanceRepository.GetGrievanceWithSolver(closeGrievanceDTO.GrievanceId);
                     var user = _httpContextAccessor.HttpContext.User;
                     var userId = Convert.ToInt32(user.FindFirst("uid")?.Value);
                     if (userId == null)

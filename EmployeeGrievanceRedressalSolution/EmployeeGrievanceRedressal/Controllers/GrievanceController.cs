@@ -51,6 +51,37 @@ namespace EmployeeGrievanceRedressal.Controllers
                 var grievances = await _grievanceService.GetAllGrievancesAsync();
                 return Ok(grievances);
             }
+            catch (UnauthorizedAccessException ex)
+            {
+                return StatusCode(401, new { Message = "Unauthorized access error occurred.", Details = ex.Message });
+            }
+            catch (EntityNotFoundException ex)
+            {
+                return NotFound(new { Message = ex.Message });
+            }
+            catch (ServiceException ex)
+            {
+                return BadRequest(new { Message = ex.Message });
+            }
+            catch (Exception ex)
+            {
+                return StatusCode(500, new { Message = "An unexpected error occurred.", Details = ex.Message });
+            }
+        }
+
+        [HttpGet("GetGrievanceById")]
+        [Authorize(Roles = "Admin, Employee, Solver")]
+        public async Task<IActionResult> GetGrievanceById(int id)
+        {
+            try
+            {
+                var grievances = await _grievanceService.GetGrievanceByIdAsync(id);
+                return Ok(grievances);
+            }
+            catch (UnauthorizedAccessException ex)
+            {
+                return StatusCode(401, new { Message = "Unauthorized access error occurred.", Details = ex.Message });
+            }
             catch (EntityNotFoundException ex)
             {
                 return NotFound(new { Message = ex.Message });
@@ -67,12 +98,16 @@ namespace EmployeeGrievanceRedressal.Controllers
 
         [HttpPut("CloseGrievance")]
         [Authorize(Roles = "Admin")]
-        public async Task<IActionResult> CloseGrievance(int id)
+        public async Task<IActionResult> CloseGrievance(CloseGrievanceDTO closeGrievanceDTO)
         {
             try
             {
-                var grievance = await _grievanceService.CloseGrievanceAsync(id);
+                var grievance = await _grievanceService.CloseGrievanceAsync(closeGrievanceDTO);
                 return Ok(grievance);
+            }
+            catch (UnauthorizedAccessException ex)
+            {
+                return StatusCode(401, new { Message = "Unauthorized access error occurred.", Details = ex.Message });
             }
             catch (EntityNotFoundException ex)
             {
@@ -95,6 +130,10 @@ namespace EmployeeGrievanceRedressal.Controllers
             {
                 var grievance = await _grievanceService.EscalateGrievanceAsync(model);
                 return Ok(grievance);
+            }
+            catch (UnauthorizedAccessException ex)
+            {
+                return StatusCode(401, new { Message = "Unauthorized access error occurred.", Details = ex.Message });
             }
             catch (EntityNotFoundException ex)
             {

@@ -17,5 +17,6 @@ namespace EmployeeGrievanceRedressal.Interfaces.ServiceInterfaces
         Task<UserDTO> DisApproveEmployeeById(int employeeid);
         Task<UserDTO> DeleteEmployeeById(int employeeid);
         Task<SolverDTO> ChangeDepartmentBySolverId(int solverid, string grievancedepartmenttype);
+        Task<IEnumerable<SolverDTO>> GetSolversByType(string grievanceType);
     }
 }

@@ -5,6 +5,7 @@ using EmployeeGrievanceRedressal.Models;
 using EmployeeGrievanceRedressal.Models.DTOs.Login;
 using EmployeeGrievanceRedressal.Models.DTOs.Register;
 using EmployeeGrievanceRedressal.Models.DTOs.User;
+using Microsoft.IdentityModel.Tokens;
 using System;
 using System.Collections.Generic;
 using System.Threading.Tasks;
@@ -31,11 +32,20 @@ namespace EmployeeGrievanceRedressal.Services
             try
             {
                 await _userRepository.Add(user);
-                var token = _tokenService.GenerateToken(user);
+                var accessToken = _tokenService.GenerateAccessToken(user);
+                var refreshToken = _tokenService.GenerateRefreshToken();
+                user.RefreshTokens.Add(new RefreshToken
+                {
+                    Token = refreshToken,
+                    Expires = DateTime.UtcNow.AddDays(7),
+                    Created = DateTime.UtcNow
+                });
+                 _userRepository.Update(user);
                 return new AuthResponse
                 {
                     IsSuccessful = true,
-                    Token = token,
+                    AccessToken = accessToken,
+                    RefreshToken = refreshToken,
                     User = MapToUserDTO(user)
                 };
             }
@@ -59,11 +69,20 @@ namespace EmployeeGrievanceRedressal.Services
                     throw new InvalidPasswordException("Invalid password.");
                 }
 
-                var token = _tokenService.GenerateToken(user);
+                var accessToken = _tokenService.GenerateAccessToken(user);
+                var refreshToken = _tokenService.GenerateRefreshToken();
+                user.RefreshTokens.Add(new RefreshToken
+                {
+                    Token = refreshToken,
+                    Expires = DateTime.UtcNow.AddDays(7),
+                    Created = DateTime.UtcNow
+                });
+                _userRepository.Update(user);
                 return new AuthResponse
                 {
                     IsSuccessful = true,
-                    Token = token,
+                    AccessToken = accessToken,
+                    RefreshToken = refreshToken,
                     User = MapToUserDTO(user)
                 };
             }
@@ -73,12 +92,49 @@ namespace EmployeeGrievanceRedressal.Services
             }
             catch (InvalidPasswordException ex)
             {
-                throw;
+                throw new InvalidPasswordException(ex.Message);
             }
             catch (Exception ex)
             {
                 throw new Exception("An error occurred during login: " + ex.Message);
             }
+        }
+
+        public async Task<AuthResponse> RefreshTokenAsync(string token)
+        {
+            var user = await _userRepository.GetByRefreshTokenAsync(token);
+            if (user == null)
+            {
+                throw new UserNotFoundException("Invalid refresh token.");
+            }
+
+            var refreshToken = user.RefreshTokens.Single(x => x.Token == token);
+
+            if (!refreshToken.IsActive)
+            {
+                throw new SecurityTokenException("Invalid refresh token.");
+            }
+
+            // Replace old refresh token with a new one (rotate token)
+            var newRefreshToken = _tokenService.GenerateRefreshToken();
+            refreshToken.Revoked = DateTime.UtcNow;
+            user.RefreshTokens.Add(new RefreshToken
+            {
+                Token = newRefreshToken,
+                Expires = DateTime.UtcNow.AddDays(7),
+                Created = DateTime.UtcNow
+            });
+             _userRepository.Update(user);
+
+            var newAccessToken = _tokenService.GenerateAccessToken(user);
+
+            return new AuthResponse
+            {
+                IsSuccessful = true,
+                AccessToken = newAccessToken,
+                RefreshToken = newRefreshToken,
+                User = MapToUserDTO(user)
+            };
         }
 
 

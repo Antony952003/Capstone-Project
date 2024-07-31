@@ -30,6 +30,10 @@ namespace EmployeeGrievanceRedressal.Controllers
                 }
                 return Ok(history);
             }
+            catch (UnauthorizedAccessException ex)
+            {
+                return StatusCode(401, new { Message = "Unauthorized access error occurred.", Details = ex.Message });
+            }
             catch (Exception ex)
             {
                 return StatusCode(500, new { Message = "An unexpected error occurred.", Details = ex.Message });

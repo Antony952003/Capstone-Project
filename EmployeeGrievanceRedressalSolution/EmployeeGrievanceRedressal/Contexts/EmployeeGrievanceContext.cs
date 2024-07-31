@@ -13,6 +13,7 @@ public class EmployeeGrievanceContext : DbContext
     public DbSet<ApprovalRequest> ApprovalRequests { get; set; }
     public DbSet<GrievanceHistory> GrievanceHistories { get; set; }
     public DbSet<Rating> Ratings { get; set; }
+    public DbSet<RefreshToken> RefreshTokens { get; set; }
 
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
@@ -92,5 +93,11 @@ public class EmployeeGrievanceContext : DbContext
         // Configure the DocumentUrl entity
         modelBuilder.Entity<DocumentUrl>()
             .HasKey(d => d.DocumentUrlId);
+
+        modelBuilder.Entity<User>()
+            .HasMany(u => u.RefreshTokens)
+            .WithOne(rt => rt.User)
+            .HasForeignKey(rt => rt.UserId);
+
     }
 }

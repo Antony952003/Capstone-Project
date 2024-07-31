@@ -239,5 +239,19 @@ namespace EmployeeGrievanceRedressal.Services
             }
             throw new EntityNotFoundException("Solver not found");
         }
+
+        public async Task<IEnumerable<SolverDTO>> GetSolversByType(string grievanceType)
+        {
+            try
+            {
+                var solvers = await GetAllSolversAsync();
+                solvers = solvers.Where(x => x.GrievanceDepartmentType == grievanceType);
+                return solvers.ToList();
+            }
+            catch(EntityNotFoundException e)
+            {
+                throw e;
+            }
+        }
     }
 }

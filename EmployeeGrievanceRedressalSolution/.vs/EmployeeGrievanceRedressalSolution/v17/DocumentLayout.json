@@ -3,112 +3,12 @@
   "WorkspaceRootPath": "C:\\Users\\VC\\Desktop\\Capstone Project\\EmployeeGrievanceRedressalSolution\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{95CDA3FC-D553-4F17-A2C9-C3AF522C2862}|EmployeeGrievanceRedressal\\EmployeeGrievanceRedressal.csproj|c:\\users\\vc\\desktop\\capstone project\\employeegrievanceredressalsolution\\employeegrievanceredressal\\models\\user.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{95CDA3FC-D553-4F17-A2C9-C3AF522C2862}|EmployeeGrievanceRedressal\\EmployeeGrievanceRedressal.csproj|solutionrelative:employeegrievanceredressal\\models\\user.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{95CDA3FC-D553-4F17-A2C9-C3AF522C2862}|EmployeeGrievanceRedressal\\EmployeeGrievanceRedressal.csproj|c:\\users\\vc\\desktop\\capstone project\\employeegrievanceredressalsolution\\employeegrievanceredressal\\models\\grievance.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{95CDA3FC-D553-4F17-A2C9-C3AF522C2862}|EmployeeGrievanceRedressal\\EmployeeGrievanceRedressal.csproj|solutionrelative:employeegrievanceredressal\\models\\grievance.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{95CDA3FC-D553-4F17-A2C9-C3AF522C2862}|EmployeeGrievanceRedressal\\EmployeeGrievanceRedressal.csproj|c:\\users\\vc\\desktop\\capstone project\\employeegrievanceredressalsolution\\employeegrievanceredressal\\services\\grievanceservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{95CDA3FC-D553-4F17-A2C9-C3AF522C2862}|EmployeeGrievanceRedressal\\EmployeeGrievanceRedressal.csproj|solutionrelative:employeegrievanceredressal\\services\\grievanceservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{95CDA3FC-D553-4F17-A2C9-C3AF522C2862}|EmployeeGrievanceRedressal\\EmployeeGrievanceRedressal.csproj|c:\\users\\vc\\desktop\\capstone project\\employeegrievanceredressalsolution\\employeegrievanceredressal\\controllers\\grievancecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{95CDA3FC-D553-4F17-A2C9-C3AF522C2862}|EmployeeGrievanceRedressal\\EmployeeGrievanceRedressal.csproj|solutionrelative:employeegrievanceredressal\\controllers\\grievancecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{95CDA3FC-D553-4F17-A2C9-C3AF522C2862}|EmployeeGrievanceRedressal\\EmployeeGrievanceRedressal.csproj|c:\\users\\vc\\desktop\\capstone project\\employeegrievanceredressalsolution\\employeegrievanceredressal\\interfaces\\serviceinterfaces\\igrievanceservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{95CDA3FC-D553-4F17-A2C9-C3AF522C2862}|EmployeeGrievanceRedressal\\EmployeeGrievanceRedressal.csproj|solutionrelative:employeegrievanceredressal\\interfaces\\serviceinterfaces\\igrievanceservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{95CDA3FC-D553-4F17-A2C9-C3AF522C2862}|EmployeeGrievanceRedressal\\EmployeeGrievanceRedressal.csproj|c:\\users\\vc\\desktop\\capstone project\\employeegrievanceredressalsolution\\employeegrievanceredressal\\models\\dtos\\grievance\\grievancedto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{95CDA3FC-D553-4F17-A2C9-C3AF522C2862}|EmployeeGrievanceRedressal\\EmployeeGrievanceRedressal.csproj|solutionrelative:employeegrievanceredressal\\models\\dtos\\grievance\\grievancedto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{95CDA3FC-D553-4F17-A2C9-C3AF522C2862}|EmployeeGrievanceRedressal\\EmployeeGrievanceRedressal.csproj|c:\\users\\vc\\desktop\\capstone project\\employeegrievanceredressalsolution\\employeegrievanceredressal\\services\\adminservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{95CDA3FC-D553-4F17-A2C9-C3AF522C2862}|EmployeeGrievanceRedressal\\EmployeeGrievanceRedressal.csproj|solutionrelative:employeegrievanceredressal\\services\\adminservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{95CDA3FC-D553-4F17-A2C9-C3AF522C2862}|EmployeeGrievanceRedressal\\EmployeeGrievanceRedressal.csproj|c:\\users\\vc\\desktop\\capstone project\\employeegrievanceredressalsolution\\employeegrievanceredressal\\services\\grievancehistoryservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{95CDA3FC-D553-4F17-A2C9-C3AF522C2862}|EmployeeGrievanceRedressal\\EmployeeGrievanceRedressal.csproj|solutionrelative:employeegrievanceredressal\\services\\grievancehistoryservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{95CDA3FC-D553-4F17-A2C9-C3AF522C2862}|EmployeeGrievanceRedressal\\EmployeeGrievanceRedressal.csproj|c:\\users\\vc\\desktop\\capstone project\\employeegrievanceredressalsolution\\employeegrievanceredressal\\models\\dtos\\grievance\\escalategrievancedto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{95CDA3FC-D553-4F17-A2C9-C3AF522C2862}|EmployeeGrievanceRedressal\\EmployeeGrievanceRedressal.csproj|solutionrelative:employeegrievanceredressal\\models\\dtos\\grievance\\escalategrievancedto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{95CDA3FC-D553-4F17-A2C9-C3AF522C2862}|EmployeeGrievanceRedressal\\EmployeeGrievanceRedressal.csproj|c:\\users\\vc\\desktop\\capstone project\\employeegrievanceredressalsolution\\employeegrievanceredressal\\models\\dtos\\grievance\\assigngrievancedto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{95CDA3FC-D553-4F17-A2C9-C3AF522C2862}|EmployeeGrievanceRedressal\\EmployeeGrievanceRedressal.csproj|solutionrelative:employeegrievanceredressal\\models\\dtos\\grievance\\assigngrievancedto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{95CDA3FC-D553-4F17-A2C9-C3AF522C2862}|EmployeeGrievanceRedressal\\EmployeeGrievanceRedressal.csproj|c:\\users\\vc\\desktop\\capstone project\\employeegrievanceredressalsolution\\employeegrievanceredressal\\models\\dtos\\grievance\\creategrievancedto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{95CDA3FC-D553-4F17-A2C9-C3AF522C2862}|EmployeeGrievanceRedressal\\EmployeeGrievanceRedressal.csproj|solutionrelative:employeegrievanceredressal\\models\\dtos\\grievance\\creategrievancedto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\VC\\Desktop\\Capstone Project\\EmployeeGrievanceRedressalSolution\\EmployeeGrievanceRedressal\\Migrations\\20240729170456_grievancetitle.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:EmployeeGrievanceRedressal\\Migrations\\20240729170456_grievancetitle.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{95CDA3FC-D553-4F17-A2C9-C3AF522C2862}|EmployeeGrievanceRedressal\\EmployeeGrievanceRedressal.csproj|c:\\users\\vc\\desktop\\capstone project\\employeegrievanceredressalsolution\\employeegrievanceredressal\\controllers\\admincontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{95CDA3FC-D553-4F17-A2C9-C3AF522C2862}|EmployeeGrievanceRedressal\\EmployeeGrievanceRedressal.csproj|solutionrelative:employeegrievanceredressal\\controllers\\admincontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{95CDA3FC-D553-4F17-A2C9-C3AF522C2862}|EmployeeGrievanceRedressal\\EmployeeGrievanceRedressal.csproj|c:\\users\\vc\\desktop\\capstone project\\employeegrievanceredressalsolution\\employeegrievanceredressal\\interfaces\\serviceinterfaces\\iadminservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{95CDA3FC-D553-4F17-A2C9-C3AF522C2862}|EmployeeGrievanceRedressal\\EmployeeGrievanceRedressal.csproj|solutionrelative:employeegrievanceredressal\\interfaces\\serviceinterfaces\\iadminservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{95CDA3FC-D553-4F17-A2C9-C3AF522C2862}|EmployeeGrievanceRedressal\\EmployeeGrievanceRedressal.csproj|c:\\users\\vc\\desktop\\capstone project\\employeegrievanceredressalsolution\\employeegrievanceredressal\\models\\dtos\\user\\solverdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{95CDA3FC-D553-4F17-A2C9-C3AF522C2862}|EmployeeGrievanceRedressal\\EmployeeGrievanceRedressal.csproj|solutionrelative:employeegrievanceredressal\\models\\dtos\\user\\solverdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{95CDA3FC-D553-4F17-A2C9-C3AF522C2862}|EmployeeGrievanceRedressal\\EmployeeGrievanceRedressal.csproj|c:\\users\\vc\\desktop\\capstone project\\employeegrievanceredressalsolution\\employeegrievanceredressal\\services\\approvalrequestservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{95CDA3FC-D553-4F17-A2C9-C3AF522C2862}|EmployeeGrievanceRedressal\\EmployeeGrievanceRedressal.csproj|solutionrelative:employeegrievanceredressal\\services\\approvalrequestservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{95CDA3FC-D553-4F17-A2C9-C3AF522C2862}|EmployeeGrievanceRedressal\\EmployeeGrievanceRedressal.csproj|c:\\users\\vc\\desktop\\capstone project\\employeegrievanceredressalsolution\\employeegrievanceredressal\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{95CDA3FC-D553-4F17-A2C9-C3AF522C2862}|EmployeeGrievanceRedressal\\EmployeeGrievanceRedressal.csproj|solutionrelative:employeegrievanceredressal\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{95CDA3FC-D553-4F17-A2C9-C3AF522C2862}|EmployeeGrievanceRedressal\\EmployeeGrievanceRedressal.csproj|c:\\users\\vc\\desktop\\capstone project\\employeegrievanceredressalsolution\\employeegrievanceredressal\\models\\approvalrequest.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{95CDA3FC-D553-4F17-A2C9-C3AF522C2862}|EmployeeGrievanceRedressal\\EmployeeGrievanceRedressal.csproj|solutionrelative:employeegrievanceredressal\\models\\approvalrequest.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{95CDA3FC-D553-4F17-A2C9-C3AF522C2862}|EmployeeGrievanceRedressal\\EmployeeGrievanceRedressal.csproj|c:\\users\\vc\\desktop\\capstone project\\employeegrievanceredressalsolution\\employeegrievanceredressal\\controllers\\authcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{95CDA3FC-D553-4F17-A2C9-C3AF522C2862}|EmployeeGrievanceRedressal\\EmployeeGrievanceRedressal.csproj|solutionrelative:employeegrievanceredressal\\controllers\\authcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{95CDA3FC-D553-4F17-A2C9-C3AF522C2862}|EmployeeGrievanceRedressal\\EmployeeGrievanceRedressal.csproj|c:\\users\\vc\\desktop\\capstone project\\employeegrievanceredressalsolution\\employeegrievanceredressal\\models\\dtos\\register\\userregisterdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{95CDA3FC-D553-4F17-A2C9-C3AF522C2862}|EmployeeGrievanceRedressal\\EmployeeGrievanceRedressal.csproj|solutionrelative:employeegrievanceredressal\\models\\dtos\\register\\userregisterdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{95CDA3FC-D553-4F17-A2C9-C3AF522C2862}|EmployeeGrievanceRedressal\\EmployeeGrievanceRedressal.csproj|c:\\users\\vc\\desktop\\capstone project\\employeegrievanceredressalsolution\\employeegrievanceredressal\\services\\authservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{95CDA3FC-D553-4F17-A2C9-C3AF522C2862}|EmployeeGrievanceRedressal\\EmployeeGrievanceRedressal.csproj|solutionrelative:employeegrievanceredressal\\services\\authservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{95CDA3FC-D553-4F17-A2C9-C3AF522C2862}|EmployeeGrievanceRedressal\\EmployeeGrievanceRedressal.csproj|c:\\users\\vc\\desktop\\capstone project\\employeegrievanceredressalsolution\\employeegrievanceredressal\\interfaces\\serviceinterfaces\\iauthservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{95CDA3FC-D553-4F17-A2C9-C3AF522C2862}|EmployeeGrievanceRedressal\\EmployeeGrievanceRedressal.csproj|solutionrelative:employeegrievanceredressal\\interfaces\\serviceinterfaces\\iauthservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{95CDA3FC-D553-4F17-A2C9-C3AF522C2862}|EmployeeGrievanceRedressal\\EmployeeGrievanceRedressal.csproj|c:\\users\\vc\\desktop\\capstone project\\employeegrievanceredressalsolution\\employeegrievanceredressal\\models\\dtos\\user\\userdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{95CDA3FC-D553-4F17-A2C9-C3AF522C2862}|EmployeeGrievanceRedressal\\EmployeeGrievanceRedressal.csproj|solutionrelative:employeegrievanceredressal\\models\\dtos\\user\\userdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{95CDA3FC-D553-4F17-A2C9-C3AF522C2862}|EmployeeGrievanceRedressal\\EmployeeGrievanceRedressal.csproj|c:\\users\\vc\\desktop\\capstone project\\employeegrievanceredressalsolution\\employeegrievanceredressal\\models\\dtos\\rating\\ratingdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{95CDA3FC-D553-4F17-A2C9-C3AF522C2862}|EmployeeGrievanceRedressal\\EmployeeGrievanceRedressal.csproj|solutionrelative:employeegrievanceredressal\\models\\dtos\\rating\\ratingdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{95CDA3FC-D553-4F17-A2C9-C3AF522C2862}|EmployeeGrievanceRedressal\\EmployeeGrievanceRedressal.csproj|c:\\users\\vc\\desktop\\capstone project\\employeegrievanceredressalsolution\\employeegrievanceredressal\\services\\solutionservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{95CDA3FC-D553-4F17-A2C9-C3AF522C2862}|EmployeeGrievanceRedressal\\EmployeeGrievanceRedressal.csproj|solutionrelative:employeegrievanceredressal\\services\\solutionservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{95CDA3FC-D553-4F17-A2C9-C3AF522C2862}|EmployeeGrievanceRedressal\\EmployeeGrievanceRedressal.csproj|c:\\users\\vc\\desktop\\capstone project\\employeegrievanceredressalsolution\\employeegrievanceredressal\\models\\grievancehistory.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{95CDA3FC-D553-4F17-A2C9-C3AF522C2862}|EmployeeGrievanceRedressal\\EmployeeGrievanceRedressal.csproj|solutionrelative:employeegrievanceredressal\\models\\grievancehistory.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{95CDA3FC-D553-4F17-A2C9-C3AF522C2862}|EmployeeGrievanceRedressal\\EmployeeGrievanceRedressal.csproj|c:\\users\\vc\\desktop\\capstone project\\employeegrievanceredressalsolution\\employeegrievanceredressal\\controllers\\approvalrequestcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{95CDA3FC-D553-4F17-A2C9-C3AF522C2862}|EmployeeGrievanceRedressal\\EmployeeGrievanceRedressal.csproj|solutionrelative:employeegrievanceredressal\\controllers\\approvalrequestcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{95CDA3FC-D553-4F17-A2C9-C3AF522C2862}|EmployeeGrievanceRedressal\\EmployeeGrievanceRedressal.csproj|c:\\users\\vc\\desktop\\capstone project\\employeegrievanceredressalsolution\\employeegrievanceredressal\\repositories\\grievancerepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{95CDA3FC-D553-4F17-A2C9-C3AF522C2862}|EmployeeGrievanceRedressal\\EmployeeGrievanceRedressal.csproj|solutionrelative:employeegrievanceredressal\\repositories\\grievancerepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -118,7 +18,7 @@
       "DocumentGroups": [
         {
           "DockedHeight": 200,
-          "SelectedChildIndex": 8,
+          "SelectedChildIndex": 5,
           "Children": [
             {
               "$type": "Bookmark",
@@ -138,353 +38,28 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "GrievanceController.cs",
-              "DocumentMoniker": "C:\\Users\\VC\\Desktop\\Capstone Project\\EmployeeGrievanceRedressalSolution\\EmployeeGrievanceRedressal\\Controllers\\GrievanceController.cs",
-              "RelativeDocumentMoniker": "EmployeeGrievanceRedressal\\Controllers\\GrievanceController.cs",
-              "ToolTip": "C:\\Users\\VC\\Desktop\\Capstone Project\\EmployeeGrievanceRedressalSolution\\EmployeeGrievanceRedressal\\Controllers\\GrievanceController.cs",
-              "RelativeToolTip": "EmployeeGrievanceRedressal\\Controllers\\GrievanceController.cs",
-              "ViewState": "AQIAACYAAAAAAAAAAAAAwDEAAAANAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-07-29T17:35:38.958Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "IGrievanceService.cs",
-              "DocumentMoniker": "C:\\Users\\VC\\Desktop\\Capstone Project\\EmployeeGrievanceRedressalSolution\\EmployeeGrievanceRedressal\\Interfaces\\ServiceInterfaces\\IGrievanceService.cs",
-              "RelativeDocumentMoniker": "EmployeeGrievanceRedressal\\Interfaces\\ServiceInterfaces\\IGrievanceService.cs",
-              "ToolTip": "C:\\Users\\VC\\Desktop\\Capstone Project\\EmployeeGrievanceRedressalSolution\\EmployeeGrievanceRedressal\\Interfaces\\ServiceInterfaces\\IGrievanceService.cs",
-              "RelativeToolTip": "EmployeeGrievanceRedressal\\Interfaces\\ServiceInterfaces\\IGrievanceService.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-07-29T17:34:45.491Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "GrievanceService.cs",
-              "DocumentMoniker": "C:\\Users\\VC\\Desktop\\Capstone Project\\EmployeeGrievanceRedressalSolution\\EmployeeGrievanceRedressal\\Services\\GrievanceService.cs",
-              "RelativeDocumentMoniker": "EmployeeGrievanceRedressal\\Services\\GrievanceService.cs",
-              "ToolTip": "C:\\Users\\VC\\Desktop\\Capstone Project\\EmployeeGrievanceRedressalSolution\\EmployeeGrievanceRedressal\\Services\\GrievanceService.cs",
-              "RelativeToolTip": "EmployeeGrievanceRedressal\\Services\\GrievanceService.cs",
-              "ViewState": "AQIAAF0AAAAAAAAAAAAAAG8AAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-07-26T06:34:52.094Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
               "DocumentIndex": 1,
-              "Title": "Grievance.cs",
-              "DocumentMoniker": "C:\\Users\\VC\\Desktop\\Capstone Project\\EmployeeGrievanceRedressalSolution\\EmployeeGrievanceRedressal\\Models\\Grievance.cs",
-              "RelativeDocumentMoniker": "EmployeeGrievanceRedressal\\Models\\Grievance.cs",
-              "ToolTip": "C:\\Users\\VC\\Desktop\\Capstone Project\\EmployeeGrievanceRedressalSolution\\EmployeeGrievanceRedressal\\Models\\Grievance.cs",
-              "RelativeToolTip": "EmployeeGrievanceRedressal\\Models\\Grievance.cs",
-              "ViewState": "AQIAAAYAAAAAAAAAAAAYwA0AAAAcAAAA",
+              "Title": "GrievanceRepository.cs",
+              "DocumentMoniker": "C:\\Users\\VC\\Desktop\\Capstone Project\\EmployeeGrievanceRedressalSolution\\EmployeeGrievanceRedressal\\Repositories\\GrievanceRepository.cs",
+              "RelativeDocumentMoniker": "EmployeeGrievanceRedressal\\Repositories\\GrievanceRepository.cs",
+              "ToolTip": "C:\\Users\\VC\\Desktop\\Capstone Project\\EmployeeGrievanceRedressalSolution\\EmployeeGrievanceRedressal\\Repositories\\GrievanceRepository.cs",
+              "RelativeToolTip": "EmployeeGrievanceRedressal\\Repositories\\GrievanceRepository.cs",
+              "ViewState": "AQIAAC8AAAAAAAAAAAAgwEgAAAAxAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-07-26T06:47:12.607Z",
+              "WhenOpened": "2024-07-31T15:07:14.864Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 0,
-              "Title": "User.cs",
-              "DocumentMoniker": "C:\\Users\\VC\\Desktop\\Capstone Project\\EmployeeGrievanceRedressalSolution\\EmployeeGrievanceRedressal\\Models\\User.cs",
-              "RelativeDocumentMoniker": "EmployeeGrievanceRedressal\\Models\\User.cs",
-              "ToolTip": "C:\\Users\\VC\\Desktop\\Capstone Project\\EmployeeGrievanceRedressalSolution\\EmployeeGrievanceRedressal\\Models\\User.cs",
-              "RelativeToolTip": "EmployeeGrievanceRedressal\\Models\\User.cs",
-              "ViewState": "AQIAAA4AAAAAAAAAAAAlwCMAAAAXAAAA",
+              "Title": "GrievanceService.cs",
+              "DocumentMoniker": "C:\\Users\\VC\\Desktop\\Capstone Project\\EmployeeGrievanceRedressalSolution\\EmployeeGrievanceRedressal\\Services\\GrievanceService.cs",
+              "RelativeDocumentMoniker": "EmployeeGrievanceRedressal\\Services\\GrievanceService.cs",
+              "ToolTip": "C:\\Users\\VC\\Desktop\\Capstone Project\\EmployeeGrievanceRedressalSolution\\EmployeeGrievanceRedressal\\Services\\GrievanceService.cs",
+              "RelativeToolTip": "EmployeeGrievanceRedressal\\Services\\GrievanceService.cs",
+              "ViewState": "AQIAAH8AAAAAAAAAAAAcwJQAAAArAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-07-29T11:07:55.217Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 5,
-              "Title": "GrievanceDTO.cs",
-              "DocumentMoniker": "C:\\Users\\VC\\Desktop\\Capstone Project\\EmployeeGrievanceRedressalSolution\\EmployeeGrievanceRedressal\\Models\\DTOs\\Grievance\\GrievanceDTO.cs",
-              "RelativeDocumentMoniker": "EmployeeGrievanceRedressal\\Models\\DTOs\\Grievance\\GrievanceDTO.cs",
-              "ToolTip": "C:\\Users\\VC\\Desktop\\Capstone Project\\EmployeeGrievanceRedressalSolution\\EmployeeGrievanceRedressal\\Models\\DTOs\\Grievance\\GrievanceDTO.cs",
-              "RelativeToolTip": "EmployeeGrievanceRedressal\\Models\\DTOs\\Grievance\\GrievanceDTO.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAgAAAAqAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-07-29T17:01:40.608Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 8,
-              "Title": "EscalateGrievanceDTO.cs",
-              "DocumentMoniker": "C:\\Users\\VC\\Desktop\\Capstone Project\\EmployeeGrievanceRedressalSolution\\EmployeeGrievanceRedressal\\Models\\DTOs\\Grievance\\EscalateGrievanceDTO.cs",
-              "RelativeDocumentMoniker": "EmployeeGrievanceRedressal\\Models\\DTOs\\Grievance\\EscalateGrievanceDTO.cs",
-              "ToolTip": "C:\\Users\\VC\\Desktop\\Capstone Project\\EmployeeGrievanceRedressalSolution\\EmployeeGrievanceRedressal\\Models\\DTOs\\Grievance\\EscalateGrievanceDTO.cs",
-              "RelativeToolTip": "EmployeeGrievanceRedressal\\Models\\DTOs\\Grievance\\EscalateGrievanceDTO.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-07-29T17:01:38.785Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 7,
-              "Title": "GrievanceHistoryService.cs",
-              "DocumentMoniker": "C:\\Users\\VC\\Desktop\\Capstone Project\\EmployeeGrievanceRedressalSolution\\EmployeeGrievanceRedressal\\Services\\GrievanceHistoryService.cs",
-              "RelativeDocumentMoniker": "EmployeeGrievanceRedressal\\Services\\GrievanceHistoryService.cs",
-              "ToolTip": "C:\\Users\\VC\\Desktop\\Capstone Project\\EmployeeGrievanceRedressalSolution\\EmployeeGrievanceRedressal\\Services\\GrievanceHistoryService.cs",
-              "RelativeToolTip": "EmployeeGrievanceRedressal\\Services\\GrievanceHistoryService.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAEQAAAAjAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-07-26T06:38:18.768Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 6,
-              "Title": "AdminService.cs",
-              "DocumentMoniker": "C:\\Users\\VC\\Desktop\\Capstone Project\\EmployeeGrievanceRedressalSolution\\EmployeeGrievanceRedressal\\Services\\AdminService.cs",
-              "RelativeDocumentMoniker": "EmployeeGrievanceRedressal\\Services\\AdminService.cs",
-              "ToolTip": "C:\\Users\\VC\\Desktop\\Capstone Project\\EmployeeGrievanceRedressalSolution\\EmployeeGrievanceRedressal\\Services\\AdminService.cs",
-              "RelativeToolTip": "EmployeeGrievanceRedressal\\Services\\AdminService.cs",
-              "ViewState": "AQIAAA0AAAAAAAAAAAA3wBsAAABFAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-07-26T06:10:02.177Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 9,
-              "Title": "AssignGrievanceDTO.cs",
-              "DocumentMoniker": "C:\\Users\\VC\\Desktop\\Capstone Project\\EmployeeGrievanceRedressalSolution\\EmployeeGrievanceRedressal\\Models\\DTOs\\Grievance\\AssignGrievanceDTO.cs",
-              "RelativeDocumentMoniker": "EmployeeGrievanceRedressal\\Models\\DTOs\\Grievance\\AssignGrievanceDTO.cs",
-              "ToolTip": "C:\\Users\\VC\\Desktop\\Capstone Project\\EmployeeGrievanceRedressalSolution\\EmployeeGrievanceRedressal\\Models\\DTOs\\Grievance\\AssignGrievanceDTO.cs",
-              "RelativeToolTip": "EmployeeGrievanceRedressal\\Models\\DTOs\\Grievance\\AssignGrievanceDTO.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAkAAAA7AAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-07-29T17:01:29.407Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 10,
-              "Title": "CreateGrievanceDTO.cs",
-              "DocumentMoniker": "C:\\Users\\VC\\Desktop\\Capstone Project\\EmployeeGrievanceRedressalSolution\\EmployeeGrievanceRedressal\\Models\\DTOs\\Grievance\\CreateGrievanceDTO.cs",
-              "RelativeDocumentMoniker": "EmployeeGrievanceRedressal\\Models\\DTOs\\Grievance\\CreateGrievanceDTO.cs",
-              "ToolTip": "C:\\Users\\VC\\Desktop\\Capstone Project\\EmployeeGrievanceRedressalSolution\\EmployeeGrievanceRedressal\\Models\\DTOs\\Grievance\\CreateGrievanceDTO.cs",
-              "RelativeToolTip": "EmployeeGrievanceRedressal\\Models\\DTOs\\Grievance\\CreateGrievanceDTO.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAA4AAAA2AAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-07-29T17:01:34.802Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 11,
-              "Title": "20240729170456_grievancetitle.cs",
-              "DocumentMoniker": "C:\\Users\\VC\\Desktop\\Capstone Project\\EmployeeGrievanceRedressalSolution\\EmployeeGrievanceRedressal\\Migrations\\20240729170456_grievancetitle.cs",
-              "RelativeDocumentMoniker": "EmployeeGrievanceRedressal\\Migrations\\20240729170456_grievancetitle.cs",
-              "ToolTip": "C:\\Users\\VC\\Desktop\\Capstone Project\\EmployeeGrievanceRedressalSolution\\EmployeeGrievanceRedressal\\Migrations\\20240729170456_grievancetitle.cs",
-              "RelativeToolTip": "EmployeeGrievanceRedressal\\Migrations\\20240729170456_grievancetitle.cs",
-              "ViewState": "AQIAAAMAAAAAAAAAAAAAABIAAABHAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-07-29T17:04:56.273Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 14,
-              "Title": "SolverDTO.cs",
-              "DocumentMoniker": "C:\\Users\\VC\\Desktop\\Capstone Project\\EmployeeGrievanceRedressalSolution\\EmployeeGrievanceRedressal\\Models\\DTOs\\User\\SolverDTO.cs",
-              "RelativeDocumentMoniker": "EmployeeGrievanceRedressal\\Models\\DTOs\\User\\SolverDTO.cs",
-              "ToolTip": "C:\\Users\\VC\\Desktop\\Capstone Project\\EmployeeGrievanceRedressalSolution\\EmployeeGrievanceRedressal\\Models\\DTOs\\User\\SolverDTO.cs",
-              "RelativeToolTip": "EmployeeGrievanceRedressal\\Models\\DTOs\\User\\SolverDTO.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-07-29T09:25:57.59Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 12,
-              "Title": "AdminController.cs",
-              "DocumentMoniker": "C:\\Users\\VC\\Desktop\\Capstone Project\\EmployeeGrievanceRedressalSolution\\EmployeeGrievanceRedressal\\Controllers\\AdminController.cs",
-              "RelativeDocumentMoniker": "EmployeeGrievanceRedressal\\Controllers\\AdminController.cs",
-              "ToolTip": "C:\\Users\\VC\\Desktop\\Capstone Project\\EmployeeGrievanceRedressalSolution\\EmployeeGrievanceRedressal\\Controllers\\AdminController.cs",
-              "RelativeToolTip": "EmployeeGrievanceRedressal\\Controllers\\AdminController.cs",
-              "ViewState": "AQIAAPMAAAAAAAAAAAAkwP8AAAANAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-07-26T06:02:09.015Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 13,
-              "Title": "IAdminService.cs",
-              "DocumentMoniker": "C:\\Users\\VC\\Desktop\\Capstone Project\\EmployeeGrievanceRedressalSolution\\EmployeeGrievanceRedressal\\Interfaces\\ServiceInterfaces\\IAdminService.cs",
-              "RelativeDocumentMoniker": "EmployeeGrievanceRedressal\\Interfaces\\ServiceInterfaces\\IAdminService.cs",
-              "ToolTip": "C:\\Users\\VC\\Desktop\\Capstone Project\\EmployeeGrievanceRedressalSolution\\EmployeeGrievanceRedressal\\Interfaces\\ServiceInterfaces\\IAdminService.cs",
-              "RelativeToolTip": "EmployeeGrievanceRedressal\\Interfaces\\ServiceInterfaces\\IAdminService.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAABIAAAAWAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-07-29T04:20:08.529Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 15,
-              "Title": "ApprovalRequestService.cs",
-              "DocumentMoniker": "C:\\Users\\VC\\Desktop\\Capstone Project\\EmployeeGrievanceRedressalSolution\\EmployeeGrievanceRedressal\\Services\\ApprovalRequestService.cs",
-              "RelativeDocumentMoniker": "EmployeeGrievanceRedressal\\Services\\ApprovalRequestService.cs",
-              "ToolTip": "C:\\Users\\VC\\Desktop\\Capstone Project\\EmployeeGrievanceRedressalSolution\\EmployeeGrievanceRedressal\\Services\\ApprovalRequestService.cs",
-              "RelativeToolTip": "EmployeeGrievanceRedressal\\Services\\ApprovalRequestService.cs",
-              "ViewState": "AQIAAAMAAAAAAAAAAAAAADEAAAAnAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-07-29T07:16:05.003Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 16,
-              "Title": "Program.cs",
-              "DocumentMoniker": "C:\\Users\\VC\\Desktop\\Capstone Project\\EmployeeGrievanceRedressalSolution\\EmployeeGrievanceRedressal\\Program.cs",
-              "RelativeDocumentMoniker": "EmployeeGrievanceRedressal\\Program.cs",
-              "ToolTip": "C:\\Users\\VC\\Desktop\\Capstone Project\\EmployeeGrievanceRedressalSolution\\EmployeeGrievanceRedressal\\Program.cs",
-              "RelativeToolTip": "EmployeeGrievanceRedressal\\Program.cs",
-              "ViewState": "AQIAAAMAAAAAAAAAAAAjwBcAAAAQAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-07-26T07:02:42.185Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 19,
-              "Title": "UserRegisterDTO.cs",
-              "DocumentMoniker": "C:\\Users\\VC\\Desktop\\Capstone Project\\EmployeeGrievanceRedressalSolution\\EmployeeGrievanceRedressal\\Models\\DTOs\\Register\\UserRegisterDTO.cs",
-              "RelativeDocumentMoniker": "EmployeeGrievanceRedressal\\Models\\DTOs\\Register\\UserRegisterDTO.cs",
-              "ToolTip": "C:\\Users\\VC\\Desktop\\Capstone Project\\EmployeeGrievanceRedressalSolution\\EmployeeGrievanceRedressal\\Models\\DTOs\\Register\\UserRegisterDTO.cs",
-              "RelativeToolTip": "EmployeeGrievanceRedressal\\Models\\DTOs\\Register\\UserRegisterDTO.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-07-26T13:54:06.612Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 17,
-              "Title": "ApprovalRequest.cs",
-              "DocumentMoniker": "C:\\Users\\VC\\Desktop\\Capstone Project\\EmployeeGrievanceRedressalSolution\\EmployeeGrievanceRedressal\\Models\\ApprovalRequest.cs",
-              "RelativeDocumentMoniker": "EmployeeGrievanceRedressal\\Models\\ApprovalRequest.cs",
-              "ToolTip": "C:\\Users\\VC\\Desktop\\Capstone Project\\EmployeeGrievanceRedressalSolution\\EmployeeGrievanceRedressal\\Models\\ApprovalRequest.cs",
-              "RelativeToolTip": "EmployeeGrievanceRedressal\\Models\\ApprovalRequest.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAABAAAAAQAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-07-28T09:04:42.749Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 18,
-              "Title": "AuthController.cs",
-              "DocumentMoniker": "C:\\Users\\VC\\Desktop\\Capstone Project\\EmployeeGrievanceRedressalSolution\\EmployeeGrievanceRedressal\\Controllers\\AuthController.cs",
-              "RelativeDocumentMoniker": "EmployeeGrievanceRedressal\\Controllers\\AuthController.cs",
-              "ToolTip": "C:\\Users\\VC\\Desktop\\Capstone Project\\EmployeeGrievanceRedressalSolution\\EmployeeGrievanceRedressal\\Controllers\\AuthController.cs",
-              "RelativeToolTip": "EmployeeGrievanceRedressal\\Controllers\\AuthController.cs",
-              "ViewState": "AQIAACgAAAAAAAAAAAApwDAAAAAuAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-07-26T13:26:27.734Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 21,
-              "Title": "IAuthService.cs",
-              "DocumentMoniker": "C:\\Users\\VC\\Desktop\\Capstone Project\\EmployeeGrievanceRedressalSolution\\EmployeeGrievanceRedressal\\Interfaces\\ServiceInterfaces\\IAuthService.cs",
-              "RelativeDocumentMoniker": "EmployeeGrievanceRedressal\\Interfaces\\ServiceInterfaces\\IAuthService.cs",
-              "ToolTip": "C:\\Users\\VC\\Desktop\\Capstone Project\\EmployeeGrievanceRedressalSolution\\EmployeeGrievanceRedressal\\Interfaces\\ServiceInterfaces\\IAuthService.cs",
-              "RelativeToolTip": "EmployeeGrievanceRedressal\\Interfaces\\ServiceInterfaces\\IAuthService.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAkAAAA7AAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-07-26T13:20:21.45Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 20,
-              "Title": "AuthService.cs",
-              "DocumentMoniker": "C:\\Users\\VC\\Desktop\\Capstone Project\\EmployeeGrievanceRedressalSolution\\EmployeeGrievanceRedressal\\Services\\AuthService.cs",
-              "RelativeDocumentMoniker": "EmployeeGrievanceRedressal\\Services\\AuthService.cs",
-              "ToolTip": "C:\\Users\\VC\\Desktop\\Capstone Project\\EmployeeGrievanceRedressalSolution\\EmployeeGrievanceRedressal\\Services\\AuthService.cs",
-              "RelativeToolTip": "EmployeeGrievanceRedressal\\Services\\AuthService.cs",
-              "ViewState": "AQIAAGkAAAAAAAAAAAAqwHkAAAANAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-07-26T13:13:36.949Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 22,
-              "Title": "UserDTO.cs",
-              "DocumentMoniker": "C:\\Users\\VC\\Desktop\\Capstone Project\\EmployeeGrievanceRedressalSolution\\EmployeeGrievanceRedressal\\Models\\DTOs\\User\\UserDTO.cs",
-              "RelativeDocumentMoniker": "EmployeeGrievanceRedressal\\Models\\DTOs\\User\\UserDTO.cs",
-              "ToolTip": "C:\\Users\\VC\\Desktop\\Capstone Project\\EmployeeGrievanceRedressalSolution\\EmployeeGrievanceRedressal\\Models\\DTOs\\User\\UserDTO.cs",
-              "RelativeToolTip": "EmployeeGrievanceRedressal\\Models\\DTOs\\User\\UserDTO.cs",
-              "ViewState": "AQIAAAIAAAAAAAAAAAAxwAAAAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-07-26T11:51:20.981Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 25,
-              "Title": "GrievanceHistory.cs",
-              "DocumentMoniker": "C:\\Users\\VC\\Desktop\\Capstone Project\\EmployeeGrievanceRedressalSolution\\EmployeeGrievanceRedressal\\Models\\GrievanceHistory.cs",
-              "RelativeDocumentMoniker": "EmployeeGrievanceRedressal\\Models\\GrievanceHistory.cs",
-              "ToolTip": "C:\\Users\\VC\\Desktop\\Capstone Project\\EmployeeGrievanceRedressalSolution\\EmployeeGrievanceRedressal\\Models\\GrievanceHistory.cs",
-              "RelativeToolTip": "EmployeeGrievanceRedressal\\Models\\GrievanceHistory.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAABAAAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-07-26T06:47:16.232Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 23,
-              "Title": "RatingDTO.cs",
-              "DocumentMoniker": "C:\\Users\\VC\\Desktop\\Capstone Project\\EmployeeGrievanceRedressalSolution\\EmployeeGrievanceRedressal\\Models\\DTOs\\Rating\\RatingDTO.cs",
-              "RelativeDocumentMoniker": "EmployeeGrievanceRedressal\\Models\\DTOs\\Rating\\RatingDTO.cs",
-              "ToolTip": "C:\\Users\\VC\\Desktop\\Capstone Project\\EmployeeGrievanceRedressalSolution\\EmployeeGrievanceRedressal\\Models\\DTOs\\Rating\\RatingDTO.cs",
-              "RelativeToolTip": "EmployeeGrievanceRedressal\\Models\\DTOs\\Rating\\RatingDTO.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAUAAAAsAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-07-26T05:25:40.343Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 24,
-              "Title": "SolutionService.cs",
-              "DocumentMoniker": "C:\\Users\\VC\\Desktop\\Capstone Project\\EmployeeGrievanceRedressalSolution\\EmployeeGrievanceRedressal\\Services\\SolutionService.cs",
-              "RelativeDocumentMoniker": "EmployeeGrievanceRedressal\\Services\\SolutionService.cs",
-              "ToolTip": "C:\\Users\\VC\\Desktop\\Capstone Project\\EmployeeGrievanceRedressalSolution\\EmployeeGrievanceRedressal\\Services\\SolutionService.cs",
-              "RelativeToolTip": "EmployeeGrievanceRedressal\\Services\\SolutionService.cs",
-              "ViewState": "AQIAAD4AAAAAAAAAAAAgwE0AAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-07-26T06:57:35.798Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 26,
-              "Title": "ApprovalRequestController.cs",
-              "DocumentMoniker": "C:\\Users\\VC\\Desktop\\Capstone Project\\EmployeeGrievanceRedressalSolution\\EmployeeGrievanceRedressal\\Controllers\\ApprovalRequestController.cs",
-              "RelativeDocumentMoniker": "EmployeeGrievanceRedressal\\Controllers\\ApprovalRequestController.cs",
-              "ToolTip": "C:\\Users\\VC\\Desktop\\Capstone Project\\EmployeeGrievanceRedressalSolution\\EmployeeGrievanceRedressal\\Controllers\\ApprovalRequestController.cs",
-              "RelativeToolTip": "EmployeeGrievanceRedressal\\Controllers\\ApprovalRequestController.cs",
-              "ViewState": "AQIAAAwAAAAAAAAAAAAAAAAAAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-07-26T06:14:56.857Z",
+              "WhenOpened": "2024-07-26T06:34:52.094Z",
               "EditorCaption": ""
             }
           ]

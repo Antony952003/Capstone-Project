@@ -22,24 +22,25 @@ namespace EmployeeGrievanceRedressal.Controllers
         [HttpPost("Register")]
         public async Task<IActionResult> Register(UserRegisterDTO model)
         {
-            var result = await _authService.RegisterAsync(model);
-            if (!result.IsSuccessful)
+            var response = await _authService.RegisterAsync(model);
+            if (response.IsSuccessful)
             {
-                return BadRequest(result.Errors);
+                return Ok(response);
             }
-            return Ok(new { Token = result.Token, User = result.User });
+            return BadRequest(response.Errors);
         }
 
         [HttpPost("Login")]
         public async Task<IActionResult> Login(UserLoginDTO model)
         {
-            var result = await _authService.LoginAsync(model);
-            if (!result.IsSuccessful)
+            var response = await _authService.LoginAsync(model);
+            if (response.IsSuccessful)
             {
-                return BadRequest(result.Errors);
+                return Ok(response);
             }
-            return Ok(new { Token = result.Token, User = result.User });
+            return BadRequest(response.Errors);
         }
+
         [HttpPost("CheckUsernameAvailablity")]
         public async Task<string> checknameavailable(string name)
         {
@@ -51,6 +52,16 @@ namespace EmployeeGrievanceRedressal.Controllers
         {
             var result = await _authService.CheckUsermailAvailablity(mail);
             return result;
+        }
+        [HttpPost("refresh-token")]
+        public async Task<IActionResult> RefreshToken(RequestToken requestToken)
+        {
+            var response = await _authService.RefreshTokenAsync(requestToken.token);
+            if (response.IsSuccessful)
+            {
+                return Ok(response);
+            }
+            return BadRequest(response.Errors);
         }
     }
 }

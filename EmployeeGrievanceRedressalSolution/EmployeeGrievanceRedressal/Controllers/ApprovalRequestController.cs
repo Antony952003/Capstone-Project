@@ -31,6 +31,10 @@ namespace EmployeeGrievanceRedressal.Controllers
                 var result = await _approvalRequestService.CreateApprovalRequestAsync(model, employeeId);
                 return CreatedAtAction(nameof(GetApprovalRequestById), new { id = result.ApprovalRequestId }, result);
             }
+            catch (UnauthorizedAccessException ex)
+            {
+                return StatusCode(401, new { Message = "Unauthorized access error occurred.", Details = ex.Message });
+            }
             catch (EntityNotFoundException ex)
             {
                 return NotFound(new { Error = ex.Message });
@@ -50,6 +54,10 @@ namespace EmployeeGrievanceRedressal.Controllers
                 var result = await _approvalRequestService.GetAllApprovalRequestsAsync();
                 return Ok(result);
             }
+            catch (UnauthorizedAccessException ex)
+            {
+                return StatusCode(401, new { Message = "Unauthorized access error occurred.", Details = ex.Message });
+            }
             catch (Exception ex)
             {
                 return StatusCode(500, new { Error = "An unexpected error occurred.", Details = ex.Message });
@@ -64,6 +72,10 @@ namespace EmployeeGrievanceRedressal.Controllers
             {
                 var result = await _approvalRequestService.GetApprovalRequestByIdAsync(id);
                 return Ok(result);
+            }
+            catch (UnauthorizedAccessException ex)
+            {
+                return StatusCode(401, new { Message = "Unauthorized access error occurred.", Details = ex.Message });
             }
             catch (EntityNotFoundException ex)
             {
@@ -84,6 +96,10 @@ namespace EmployeeGrievanceRedressal.Controllers
                 var result = await _approvalRequestService.ApproveRequestAsync(id);
                 return Ok(result);
             }
+            catch (UnauthorizedAccessException ex)
+            {
+                return StatusCode(401, new { Message = "Unauthorized access error occurred.", Details = ex.Message });
+            }
             catch (EntityNotFoundException ex)
             {
                 return NotFound(new { Error = ex.Message });
@@ -102,6 +118,10 @@ namespace EmployeeGrievanceRedressal.Controllers
             {
                 var result = await _approvalRequestService.RejectRequestAsync(id);
                 return Ok(result);
+            }
+            catch (UnauthorizedAccessException ex)
+            {
+                return StatusCode(401, new { Message = "Unauthorized access error occurred.", Details = ex.Message });
             }
             catch (EntityNotFoundException ex)
             {
@@ -122,6 +142,10 @@ namespace EmployeeGrievanceRedressal.Controllers
                 var result = await _approvalRequestService.GetAllApprovedRequestsAsync();
                 return Ok(result);
             }
+            catch (UnauthorizedAccessException ex)
+            {
+                return StatusCode(401, new { Message = "Unauthorized access error occurred.", Details = ex.Message });
+            }
             catch (Exception ex)
             {
                 return StatusCode(500, new { Error = "An unexpected error occurred.", Details = ex.Message });
@@ -135,6 +159,10 @@ namespace EmployeeGrievanceRedressal.Controllers
             {
                 var result = await _approvalRequestService.GetAllRejectedRequestsAsync();
                 return Ok(result);
+            }
+            catch (UnauthorizedAccessException ex)
+            {
+                return StatusCode(401, new { Message = "Unauthorized access error occurred.", Details = ex.Message });
             }
             catch (Exception ex)
             {
@@ -151,7 +179,11 @@ namespace EmployeeGrievanceRedressal.Controllers
                 var requests = await _approvalRequestService.GetAllPendingRequestsAsync();
                 return Ok(requests);
             }
-            catch(Exception ex)
+            catch (UnauthorizedAccessException ex)
+            {
+                return StatusCode(401, new { Message = "Unauthorized access error occurred.", Details = ex.Message });
+            }
+            catch (Exception ex)
             {
                 return StatusCode(500, new { Error = "An unexpected error occurred.", Details = ex.Message });
 

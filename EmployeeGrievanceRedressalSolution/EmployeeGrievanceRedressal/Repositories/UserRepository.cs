@@ -76,6 +76,12 @@ namespace EmployeeGrievanceRedressal.Repositories
             return employee;
 
         }
+
+        public async Task<User> GetByRefreshTokenAsync(string refreshToken)
+        {
+            return await _context.Users.Include(u => u.RefreshTokens).SingleOrDefaultAsync(u => u.RefreshTokens.Any(t => t.Token == refreshToken));
+
+        }
     }
 
 }

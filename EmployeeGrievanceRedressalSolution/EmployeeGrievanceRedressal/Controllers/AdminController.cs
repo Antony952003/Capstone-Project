@@ -35,6 +35,10 @@ namespace EmployeeGrievanceRedressal.Controllers
                 var users = await _adminService.GetAllUsersAsync();
                 return Ok(users);
             }
+            catch (UnauthorizedAccessException ex)
+            {
+                return StatusCode(401, new { Message = "Unauthorized access error occurred.", Details = ex.Message });
+            }
             catch (EntityNotFoundException ex)
             {
                 return NotFound(new { message = ex.Message });
@@ -48,6 +52,10 @@ namespace EmployeeGrievanceRedressal.Controllers
             {
                 var users = await _adminService.GetAllApprovedUsersAsync();
                 return Ok(users);
+            }
+            catch (UnauthorizedAccessException ex)
+            {
+                return StatusCode(401, new { Message = "Unauthorized access error occurred.", Details = ex.Message });
             }
             catch (EntityNotFoundException ex)
             {
@@ -63,6 +71,27 @@ namespace EmployeeGrievanceRedressal.Controllers
                 var users = await _adminService.GetAllSolversAsync();
                 return Ok(users);
             }
+            catch (UnauthorizedAccessException ex)
+            {
+                return StatusCode(401, new { Message = "Unauthorized access error occurred.", Details = ex.Message });
+            }
+            catch (EntityNotFoundException ex)
+            {
+                return NotFound(new { message = ex.Message });
+            }
+        }
+        [HttpGet("GetSolversByType")]
+        public async Task<ActionResult<IEnumerable<SolverDTO>>> GetSolversByType(string solvertype)
+        {
+            try
+            {
+                var solvers = await _adminService.GetSolversByType(solvertype);
+                return Ok(solvers);
+            }
+            catch (UnauthorizedAccessException ex)
+            {
+                return StatusCode(401, new { Message = "Unauthorized access error occurred.", Details = ex.Message });
+            }
             catch (EntityNotFoundException ex)
             {
                 return NotFound(new { message = ex.Message });
@@ -77,6 +106,10 @@ namespace EmployeeGrievanceRedressal.Controllers
                 var users = await _adminService.GetAllEmployeesAsync();
                 return Ok(users);
             }
+            catch (UnauthorizedAccessException ex)
+            {
+                return StatusCode(401, new { Message = "Unauthorized access error occurred.", Details = ex.Message });
+            }
             catch (EntityNotFoundException ex)
             {
                 return NotFound(new { message = ex.Message });
@@ -90,6 +123,10 @@ namespace EmployeeGrievanceRedressal.Controllers
             {
                 var user = await _adminService.AssignRoleAsync(assignRoleDTO);
                 return Ok(user);
+            }
+            catch (UnauthorizedAccessException ex)
+            {
+                return StatusCode(401, new { Message = "Unauthorized access error occurred.", Details = ex.Message });
             }
             catch (EntityNotFoundException ex)
             {
@@ -113,6 +150,10 @@ namespace EmployeeGrievanceRedressal.Controllers
                 var user = await _adminService.DeleteEmployeeById(id);
                 return Ok(user);
             }
+            catch (UnauthorizedAccessException ex)
+            {
+                return StatusCode(401, new { Message = "Unauthorized access error occurred.", Details = ex.Message });
+            }
             catch (EntityNotFoundException ex)
             {
                 return NotFound(new { message = ex.Message });
@@ -134,6 +175,10 @@ namespace EmployeeGrievanceRedressal.Controllers
             {
                 var user = await _adminService.GetSolverById(id);
                 return Ok(user);
+            }
+            catch (UnauthorizedAccessException ex)
+            {
+                return StatusCode(401, new { Message = "Unauthorized access error occurred.", Details = ex.Message });
             }
             catch (EntityNotFoundException ex)
             {
@@ -159,6 +204,10 @@ namespace EmployeeGrievanceRedressal.Controllers
                 var grievances = await _adminService.DisApproveEmployeeById(id);
                 return Ok(grievances);
             }
+            catch (UnauthorizedAccessException ex)
+            {
+                return StatusCode(401, new { Message = "Unauthorized access error occurred.", Details = ex.Message });
+            }
             catch (EntityNotFoundException ex)
             {
                 return NotFound(new { Message = ex.Message });
@@ -177,6 +226,10 @@ namespace EmployeeGrievanceRedressal.Controllers
             {
                 var employee = await _adminService.GetEmployeeById(employeeid);
                 return Ok(employee);
+            }
+            catch (UnauthorizedAccessException ex)
+            {
+                return StatusCode(401, new { Message = "Unauthorized access error occurred.", Details = ex.Message });
             }
             catch (EntityNotFoundException ex)
             {
@@ -197,6 +250,10 @@ namespace EmployeeGrievanceRedressal.Controllers
                 var grievances = await _grievanceService.GetAllOpenGrievancesAsync();
                 return Ok(grievances);
             }
+            catch (UnauthorizedAccessException ex)
+            {
+                return StatusCode(401, new { Message = "Unauthorized access error occurred.", Details = ex.Message });
+            }
             catch (EntityNotFoundException ex)
             {
                 return NotFound(new { Message = ex.Message });
@@ -215,6 +272,10 @@ namespace EmployeeGrievanceRedressal.Controllers
             {
                 var updatedGrievance = await _grievanceService.AssignGrievanceAsync(model.GrievanceId, model.SolverId);
                 return Ok(updatedGrievance);
+            }
+            catch (UnauthorizedAccessException ex)
+            {
+                return StatusCode(401, new { Message = "Unauthorized access error occurred.", Details = ex.Message });
             }
             catch (EntityNotFoundException ex)
             {
@@ -238,6 +299,10 @@ namespace EmployeeGrievanceRedressal.Controllers
                 var grievances = await _grievanceService.GetAllGrievancesByTypeAsync(type);
                 return Ok(grievances);
             }
+            catch (UnauthorizedAccessException ex)
+            {
+                return StatusCode(401, new { Message = "Unauthorized access error occurred.", Details = ex.Message });
+            }
             catch (EntityNotFoundException ex)
             {
                 return NotFound(new { Message = ex.Message });
@@ -256,6 +321,10 @@ namespace EmployeeGrievanceRedressal.Controllers
             {
                 var solver = await _adminService.ChangeDepartmentBySolverId(solverid, departmenttype);
                 return Ok(solver);
+            }
+            catch(UnauthorizedAccessException ex)
+            {
+                return StatusCode(401, new { Message = "Unauthorized access error occurred.", Details = ex.Message });
             }
             catch (EntityNotFoundException ex)
             {

@@ -20,7 +20,7 @@ namespace EmployeeGrievanceRedressal.Controllers
             _userService = userService;
         }
 
-        [HttpPut("update")]
+        [HttpPut("UpdateUserDetails")]
         [Authorize(Roles = "Employee, Admin, Solver")]
         public async Task<IActionResult> UpdateUser([FromBody] UpdateUserDTO model)
         {
@@ -28,6 +28,10 @@ namespace EmployeeGrievanceRedressal.Controllers
             {
                 var updatedUser = await _userService.UpdateUserAsync(model);
                 return Ok(updatedUser);
+            }
+            catch (UnauthorizedAccessException ex)
+            {
+                return StatusCode(401, new { Message = "Unauthorized access error occurred.", Details = ex.Message });
             }
             catch (EntityNotFoundException ex)
             {

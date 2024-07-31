@@ -15,6 +15,6 @@ namespace EmployeeGrievanceRedressal.Interfaces.ServiceInterfaces
         Task<IEnumerable<GrievanceDTO>> GetAllEmployeeGrievancesAsync(int employeeId);
         Task<IEnumerable<GrievanceDTO>> GetAllGrievancesByTypeAsync(string grievanceType);
         Task<GrievanceDTO> MarkAsResolvedAsync(int grievanceId);
-        Task<GrievanceDTO> CloseGrievanceAsync(int grievanceId);
+        Task<GrievanceDTO> CloseGrievanceAsync(CloseGrievanceDTO closeGrievanceDTO);
     }
 }

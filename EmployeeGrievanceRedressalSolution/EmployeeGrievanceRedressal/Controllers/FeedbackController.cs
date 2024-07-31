@@ -28,6 +28,10 @@ namespace EmployeeGrievanceRedressal.Controllers
                 var feedback = await _feedbackService.ProvideFeedbackAsync(model);
                 return CreatedAtAction(nameof(GetFeedbackById), new { id = feedback.FeedbackId }, feedback);
             }
+            catch (UnauthorizedAccessException ex)
+            {
+                return StatusCode(401, new { Message = "Unauthorized access error occurred.", Details = ex.Message });
+            }
             catch (EntityNotFoundException ex)
             {
                 return NotFound(new { Message = ex.Message });
@@ -49,6 +53,10 @@ namespace EmployeeGrievanceRedressal.Controllers
             {
                 var feedback = await _feedbackService.GetFeedbackByIdAsync(id);
                 return Ok(feedback);
+            }
+            catch (UnauthorizedAccessException ex)
+            {
+                return StatusCode(401, new { Message = "Unauthorized access error occurred.", Details = ex.Message });
             }
             catch (EntityNotFoundException ex)
             {

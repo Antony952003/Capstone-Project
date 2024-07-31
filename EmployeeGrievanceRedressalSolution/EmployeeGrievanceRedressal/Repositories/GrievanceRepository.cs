@@ -63,6 +63,8 @@ namespace EmployeeGrievanceRedressal.Repositories
                         GrievanceId = g.GrievanceId,
                         EmployeeId = g.EmployeeId,
                         EmployeeName = g.Employee.Name,
+                        EmployeeImage = g.Employee.UserImage,
+                        Title = g.Title,
                         SolverId = g.SolverId,
                         SolverName = g.Solver != null ? g.Solver.Name : null,
                         Description = g.Description,

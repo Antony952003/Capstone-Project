@@ -7,6 +7,7 @@ namespace EmployeeGrievanceRedressal.Interfaces.ServiceInterfaces
     {
         Task<AuthResponse> RegisterAsync(UserRegisterDTO model);
         Task<AuthResponse> LoginAsync(UserLoginDTO model);
+        Task<AuthResponse> RefreshTokenAsync(string token);
         Task<string> CheckUsernameAvailablity(string name);
         Task<string> CheckUsermailAvailablity(string mail);
     }

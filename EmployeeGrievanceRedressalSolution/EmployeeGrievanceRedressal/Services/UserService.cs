@@ -38,7 +38,6 @@ namespace EmployeeGrievanceRedressal.Services
                     user.Phone = model.Phone ?? user.Phone;
                     user.Email = model.Email ?? user.Email;
                     user.UserImage = model.UserImage ?? user.UserImage;
-                    user.DOB = model.DOB ?? user.DOB;
 
                     _userRepository.Update(user);
                     await transaction.CommitAsync();

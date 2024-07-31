@@ -18,6 +18,8 @@
         public List<Feedback> Feedbacks { get; set; }
         public List<Solution> Solutions { get; set; }
         public List<Rating> Ratings { get; set; }
+        public ICollection<RefreshToken> RefreshTokens { get; set; } = new List<RefreshToken>();
+
     }
 
     public enum UserRole

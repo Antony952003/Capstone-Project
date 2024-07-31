@@ -29,6 +29,10 @@ namespace EmployeeGrievanceRedressal.Controllers
                 var result = await _solutionService.ProvideSolutionAsync(model);
                 return Ok(result);
             }
+            catch (UnauthorizedAccessException ex)
+            {
+                return StatusCode(401, new { Message = "Unauthorized access error occurred.", Details = ex.Message });
+            }
             catch (EntityNotFoundException ex)
             {
                 return NotFound(new { Message = ex.Message });
@@ -53,6 +57,10 @@ namespace EmployeeGrievanceRedressal.Controllers
                 var solution = await _solutionService.GetSolutionByIdAsync(id);
                 return Ok(solution);
             }
+            catch (UnauthorizedAccessException ex)
+            {
+                return StatusCode(401, new { Message = "Unauthorized access error occurred.", Details = ex.Message });
+            }
             catch (EntityNotFoundException ex)
             {
                 return NotFound(new { Message = ex.Message });
@@ -71,6 +79,10 @@ namespace EmployeeGrievanceRedressal.Controllers
             {
                 var solutions = await _solutionService.GetSolutionsByGrievanceIdAsync(grievanceId);
                 return Ok(solutions);
+            }
+            catch (UnauthorizedAccessException ex)
+            {
+                return StatusCode(401, new { Message = "Unauthorized access error occurred.", Details = ex.Message });
             }
             catch (EntityNotFoundException ex)
             {

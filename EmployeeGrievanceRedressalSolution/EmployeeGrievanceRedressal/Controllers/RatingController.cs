@@ -28,6 +28,10 @@ public class RatingsController : ControllerBase
             var result = await _ratingService.ProvideRatingAsync(ratingDto);
             return Ok(result);
         }
+        catch (UnauthorizedAccessException ex)
+        {
+            return StatusCode(401, new { Message = "Unauthorized access error occurred.", Details = ex.Message });
+        }
         catch (EntityNotFoundException ex)
         {
             return NotFound(ex.Message);
