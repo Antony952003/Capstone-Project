@@ -10,7 +10,6 @@ namespace EmployeeGrievanceRedressal.Controllers
 {
     [ApiController]
     [Route("api/[controller]")]
-    [Authorize(Roles = "Employee")]
     public class FeedbackController : ControllerBase
     {
         private readonly IFeedbackService _feedbackService;
@@ -21,6 +20,8 @@ namespace EmployeeGrievanceRedressal.Controllers
         }
 
         [HttpPost("provide-feedback")]
+        [Authorize(Roles = "Employee")]
+
         public async Task<IActionResult> ProvideFeedback([FromBody] ProvideFeedbackDTO model)
         {
             try
@@ -47,6 +48,8 @@ namespace EmployeeGrievanceRedressal.Controllers
         }
 
         [HttpGet("feedback/{id}")]
+        [Authorize(Roles = "Employee, Solver, Admin")]
+
         public async Task<IActionResult> GetFeedbackById(int id)
         {
             try

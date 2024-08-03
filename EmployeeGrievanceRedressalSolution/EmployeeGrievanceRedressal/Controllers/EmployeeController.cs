@@ -1,5 +1,6 @@
 ﻿using EmployeeGrievanceRedressal.Exceptions;
 using EmployeeGrievanceRedressal.Interfaces.ServiceInterfaces;
+using EmployeeGrievanceRedressal.Models;
 using EmployeeGrievanceRedressal.Models.DTOs.Grievance;
 using Microsoft.AspNetCore.Authorization.Infrastructure;
 using Microsoft.AspNetCore.Mvc;
@@ -13,19 +14,26 @@ namespace EmployeeGrievanceRedressal.Controllers
     public class EmployeeController : ControllerBase
     {
         private readonly IGrievanceService _grievanceService;
+        private readonly BlobStorageService _blobStorageService;
 
-        public EmployeeController(IGrievanceService grievanceService)
+        public EmployeeController(IGrievanceService grievanceService, BlobStorageService blobStorageService)
         {
             _grievanceService = grievanceService;
+            _blobStorageService = blobStorageService;
         }
 
         [HttpPost("raise-grievance")]
-        public async Task<IActionResult> RaiseGrievance([FromBody] CreateGrievanceDTO model)
+        public async Task<IActionResult> RaiseGrievance([FromForm] CreateGrievanceDTO grievanceDto, [FromForm] IFormFile[] documents)
         {
             try
             {
+                if (documents != null && documents.Length > 0)
+                {
+                    var documentUrls = await _blobStorageService.UploadFilesAsync(documents);
+                    grievanceDto.DocumentUrls = documentUrls;
+                }
                 var userIdClaim = User.Claims.FirstOrDefault(c => c.Type == "uid").Value.ToString();
-                var grievance = await _grievanceService.RaiseGrievanceAsync(model, Convert.ToInt32(userIdClaim));
+                var grievance = await _grievanceService.RaiseGrievanceAsync(grievanceDto, Convert.ToInt32(userIdClaim));
                 return Ok(grievance);
             }
             catch (UnauthorizedAccessException ex)

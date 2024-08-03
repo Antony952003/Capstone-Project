@@ -64,6 +64,29 @@ namespace EmployeeGrievanceRedressal.Controllers
             }
         }
 
+        [HttpGet("GetAllUserApprovalRequests")]
+        [Authorize(Roles = "Admin, Employee, Solver")]
+        public async Task<IActionResult> GetAllUserApprovalRequests()
+        {
+            try
+            {
+                var userIdClaim = User.Claims.FirstOrDefault(c => c.Type == "uid");
+                if(int.TryParse(userIdClaim.Value, out var employeeId)){
+                    var result = await _approvalRequestService.GetAllUserApprovalRequests(employeeId);
+                    return Ok(result);
+                }
+                throw new Exception("User Id is not available");
+            }
+            catch (UnauthorizedAccessException ex)
+            {
+                return StatusCode(401, new { Message = "Unauthorized access error occurred.", Details = ex.Message });
+            }
+            catch (Exception ex)
+            {
+                return StatusCode(500, new { Error = "An unexpected error occurred.", Details = ex.Message });
+            }
+        }
+
         [HttpGet("GetApprovalRequestById")]
         [Authorize(Roles = "Admin")]
         public async Task<IActionResult> GetApprovalRequestById(int id)

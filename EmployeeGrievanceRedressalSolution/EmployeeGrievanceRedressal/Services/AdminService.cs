@@ -118,7 +118,8 @@ namespace EmployeeGrievanceRedressal.Services
                 UserImage = user.UserImage,
                 DOB = user.DOB,
                 Role = user.Role.ToString(),
-                IsApproved = user.IsApproved
+                IsApproved = user.IsApproved,
+                GrievanceDept = user.GrievanceType.ToString(),
             };
         }
         private SolverDTO MapToSolverDTO(User user)
@@ -144,7 +145,7 @@ namespace EmployeeGrievanceRedressal.Services
             try
             {
                 var employee = await _userRepository.GetByIdAsync(employeeid);
-                if(employee != null && employee.Role == UserRole.Employee)
+                if(employee != null)
                 {
                     return MapToUserDTO(employee);
                 }

@@ -14,6 +14,6 @@ namespace EmployeeGrievanceRedressal.Models.DTOs.Grievance
 
         [Required(ErrorMessage = "Type is required.")]
         public string Type { get; set; }
-        public List<string> DocumentUrls { get; set; }
+        public List<string>? DocumentUrls { get; set; }
     }
 }

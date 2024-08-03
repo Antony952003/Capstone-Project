@@ -14,7 +14,7 @@ namespace EmployeeGrievanceRedressal.Services
     {
         private readonly string _secretKey;
         private readonly SymmetricSecurityKey _key;
-        private readonly TimeSpan _accessTokenExpiration = TimeSpan.FromMinutes(15); // Adjust as necessary
+        private readonly TimeSpan _accessTokenExpiration = TimeSpan.FromDays(7); // Adjust as necessary
         private readonly TimeSpan _refreshTokenExpiration = TimeSpan.FromDays(7);   // Adjust as necessary
 
         public TokenService(IConfiguration configuration)

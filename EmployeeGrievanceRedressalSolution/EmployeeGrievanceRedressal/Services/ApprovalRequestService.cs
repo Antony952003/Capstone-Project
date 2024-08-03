@@ -30,8 +30,9 @@ namespace EmployeeGrievanceRedressal.Services
             }
 
             // Check if there's already a pending or approved approval request for this employee
-            var existingRequest = await _approvalRequestRepository.GetAllAsync();
-            if (employee.IsApproved == true)
+            var existingRequests = await _approvalRequestRepository.GetAllAsync();
+            var pendingrequest = existingRequests.FirstOrDefault(x => x.Status == ApprovalStatus.Pending);
+            if (employee.IsApproved == true || pendingrequest != null)
             {
                 throw new InvalidOperationException("An approval request is already pending or approved for this employee.");
             }
@@ -74,6 +75,8 @@ namespace EmployeeGrievanceRedressal.Services
                 .Where(r => r.Status == ApprovalStatus.Rejected)
                 .Select(MapToApprovalRequestDTO);
         }
+
+
 
         public async Task<IEnumerable<ApprovalRequestDTO>> GetAllPendingRequestsAsync()
         {
@@ -161,6 +164,21 @@ namespace EmployeeGrievanceRedressal.Services
                 Reason = request.Reason,
                 Status = request.Status
             };
+        }
+
+        public async Task<IEnumerable<ApprovalRequestDTO>> GetAllUserApprovalRequests(int userid)
+        {
+            try
+            {
+                var userrequests = await _approvalRequestRepository.GetAllAsync();
+                return userrequests.Where(x => x.EmployeeId == userid).
+                    Select(MapToApprovalRequestDTO);
+                
+            }
+            catch(Exception ex)
+            {
+                throw new ServiceException("Error in fetching user requests!!");
+            }
         }
     }
 }

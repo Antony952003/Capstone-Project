@@ -1,5 +1,6 @@
 ﻿using EmployeeGrievanceRedressal.Exceptions;
 using EmployeeGrievanceRedressal.Interfaces.ServiceInterfaces;
+using EmployeeGrievanceRedressal.Models.DTOs.Grievance;
 using EmployeeGrievanceRedressal.Models.DTOs.Solution;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
@@ -14,18 +15,25 @@ namespace EmployeeGrievanceRedressal.Controllers
     public class SolutionController : ControllerBase
     {
         private readonly ISolutionService _solutionService;
+        private readonly BlobStorageService _blobStorageService;
 
-        public SolutionController(ISolutionService solutionService)
+        public SolutionController(ISolutionService solutionService, BlobStorageService blobStorageService)
         {
             _solutionService = solutionService;
+            _blobStorageService = blobStorageService;
         }
 
-        [Authorize(Roles = "Solver")]
         [HttpPost("provide-solution")]
-        public async Task<IActionResult> ProvideSolution([FromBody] ProvideSolutionDTO model)
+        [Authorize(Roles = "Solver")]
+        public async Task<IActionResult> ProvideSolution([FromForm] ProvideSolutionDTO model, [FromForm] IFormFile[] documents)
         {
             try
             {
+                if (documents != null && documents.Length > 0)
+                {
+                    var documentUrls = await _blobStorageService.UploadFilesAsync(documents);
+                    model.DocumentUrls = documentUrls;
+                }
                 var result = await _solutionService.ProvideSolutionAsync(model);
                 return Ok(result);
             }
@@ -48,7 +56,7 @@ namespace EmployeeGrievanceRedressal.Controllers
             }
         }
 
-        [Authorize(Roles = "Solver, Employee")]
+        [Authorize(Roles = "Employee, Solver, Admin")]
         [HttpGet("solution/{id}")]
         public async Task<IActionResult> GetSolutionById(int id)
         {

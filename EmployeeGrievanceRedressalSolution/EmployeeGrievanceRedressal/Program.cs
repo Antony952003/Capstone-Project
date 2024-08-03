@@ -7,6 +7,8 @@ using Microsoft.EntityFrameworkCore;
 using EmployeeGrievanceRedressal.Services;
 using EmployeeGrievanceRedressal.Interfaces.RepositoryInterfaces;
 using EmployeeGrievanceRedressal.Interfaces.ServiceInterfaces;
+using EmployeeGrievanceRedressal.Models.AzureConfiguration;
+using Microsoft.Extensions.Configuration;
 
 namespace EmployeeGrievanceRedressal
 {
@@ -16,7 +18,12 @@ namespace EmployeeGrievanceRedressal
         {
             var builder = WebApplication.CreateBuilder(args);
 
-            // Add services to the container.
+
+            builder.Services.Configure<AzureBlobStorageSettings>(builder.Configuration.GetSection("AzureBlobStorage"));
+
+            builder.Services.AddSingleton<BlobStorageService>();
+
+
             builder.Services.AddControllers();
 
             // Add DbContext configuration

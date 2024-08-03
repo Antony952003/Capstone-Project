@@ -129,6 +129,8 @@ namespace EmployeeGrievanceRedressal.Repositories
                         EmployeeId = g.EmployeeId,
                         EmployeeName = g.Employee.Name,
                         SolverId = g.SolverId,
+                        Title= g.Title,
+                        EmployeeImage = g.Employee.UserImage,
                         SolverName = g.Solver != null ? g.Solver.Name : null,
                         Description = g.Description,
                         DateRaised = g.DateRaised,

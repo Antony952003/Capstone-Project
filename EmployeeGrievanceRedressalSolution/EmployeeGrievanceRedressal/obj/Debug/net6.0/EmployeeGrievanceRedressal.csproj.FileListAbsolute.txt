@@ -70,3 +70,10 @@ C:\Users\VC\Desktop\Capstone Project\EmployeeGrievanceRedressalSolution\Employee
 C:\Users\VC\Desktop\Capstone Project\EmployeeGrievanceRedressalSolution\EmployeeGrievanceRedressal\bin\Debug\net6.0\Microsoft.AspNetCore.Authentication.JwtBearer.dll
 C:\Users\VC\Desktop\Capstone Project\EmployeeGrievanceRedressalSolution\EmployeeGrievanceRedressal\bin\Debug\net6.0\Microsoft.IdentityModel.Abstractions.dll
 C:\Users\VC\Desktop\Capstone Project\EmployeeGrievanceRedressalSolution\EmployeeGrievanceRedressal\bin\Debug\net6.0\BCrypt.Net-Next.dll
+C:\Users\VC\Desktop\Capstone Project\EmployeeGrievanceRedressalSolution\EmployeeGrievanceRedressal\bin\Debug\net6.0\Azure.Core.dll
+C:\Users\VC\Desktop\Capstone Project\EmployeeGrievanceRedressalSolution\EmployeeGrievanceRedressal\bin\Debug\net6.0\Azure.Storage.Blobs.dll
+C:\Users\VC\Desktop\Capstone Project\EmployeeGrievanceRedressalSolution\EmployeeGrievanceRedressal\bin\Debug\net6.0\Azure.Storage.Common.dll
+C:\Users\VC\Desktop\Capstone Project\EmployeeGrievanceRedressalSolution\EmployeeGrievanceRedressal\bin\Debug\net6.0\Microsoft.Bcl.AsyncInterfaces.dll
+C:\Users\VC\Desktop\Capstone Project\EmployeeGrievanceRedressalSolution\EmployeeGrievanceRedressal\bin\Debug\net6.0\System.ClientModel.dll
+C:\Users\VC\Desktop\Capstone Project\EmployeeGrievanceRedressalSolution\EmployeeGrievanceRedressal\bin\Debug\net6.0\System.IO.Hashing.dll
+C:\Users\VC\Desktop\Capstone Project\EmployeeGrievanceRedressalSolution\EmployeeGrievanceRedressal\bin\Debug\net6.0\System.Memory.Data.dll

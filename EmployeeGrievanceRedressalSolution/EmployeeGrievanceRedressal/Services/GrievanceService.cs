@@ -3,6 +3,7 @@ using EmployeeGrievanceRedressal.Interfaces.RepositoryInterfaces;
 using EmployeeGrievanceRedressal.Interfaces.ServiceInterfaces;
 using EmployeeGrievanceRedressal.Models;
 using EmployeeGrievanceRedressal.Models.DTOs.Grievance;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 using System.Collections.Generic;
 using System.Linq;
@@ -35,16 +36,12 @@ namespace EmployeeGrievanceRedressal.Services
             try
             {
                 var employeegrievances = await _grievanceRepository.GetAllEmployeeGrievancesAsync(employeeId);
-                if(employeegrievances.Count() == 0)
-                {
-                    throw new EntityNotFoundException("No Employee Grievances are found !!");
-                }
                 return employeegrievances;
             }
             catch (Exception ex)
             {
                 // Log exception details here if needed
-                throw new ServiceException("Error retrieving employee grievances", ex);
+                throw ex;
             }
         }
 
@@ -63,51 +60,68 @@ namespace EmployeeGrievanceRedressal.Services
 
         public async Task<GrievanceDTO> RaiseGrievanceAsync(CreateGrievanceDTO model, int employeeId)
         {
-            var employee = await _userRepository.GetByIdAsync(employeeId);
-            if (employee == null)
+            try
             {
-                throw new EntityNotFoundException("Employee not found.");
+                var employee = await _userRepository.GetByIdAsync(employeeId);
+                if (employee == null)
+                {
+                    throw new EntityNotFoundException("Employee not found.");
+                }
+                var grievances = await _grievanceRepository.GetAllEmployeeGrievancesAsync(employeeId);
+                var pendinggrievance = grievances.FirstOrDefault(x => x.Status != GrievanceStatus.Closed.ToString());
+                if (pendinggrievance != null)
+                {
+                    throw new Exception("Cannot raise a new grievance when there is a grievance not Closed !!");
+                }
+
+                if (!Enum.TryParse<GrievanceType>(model.Type, out var grievanceType))
+                {
+                    throw new InvalidOperationException("Invalid grievance type.");
+                }
+
+                var grievance = new Grievance
+                {
+                    EmployeeId = employeeId,
+                    Description = model.Description,
+                    DateRaised = DateTime.UtcNow,
+                    Priority = model.Priority,
+                    Status = GrievanceStatus.Open,
+                    Title = model.Title,
+                    Type = grievanceType,
+                    DocumentUrls = model?.DocumentUrls?.Select(url => new DocumentUrl { Url = url }).ToList()
+                };
+
+                await _grievanceRepository.Add(grievance);
+
+                var user = _httpContextAccessor.HttpContext.User;
+                var userId = Convert.ToInt32(user.FindFirst("uid")?.Value);
+                if (userId == null)
+                {
+                    throw new EntityNotFoundException("User not found!!");
+                }
+                var Employeeuser = await _userRepository.GetByIdAsync(userId);
+
+                var history = new GrievanceHistory
+                {
+                    GrievanceId = grievance.GrievanceId,
+                    HistoryType = "Raised Grievance",
+                    RelatedEntityId = null,
+                    DateChanged = DateTime.UtcNow,
+                    StatusChange = $"Grievance is Raised by {Employeeuser.Name}",
+
+                };
+                var historyDto = await _grievanceHistoryService.RecordHistoryAsync(history);
+
+                return MapToGrievanceDTO(grievance);
             }
-
-            if (!Enum.TryParse<GrievanceType>(model.Type, out var grievanceType))
+            catch(EntityNotFoundException ex)
             {
-                throw new InvalidOperationException("Invalid grievance type.");
+                throw ex;
             }
-
-            var grievance = new Grievance
+            catch(Exception ex)
             {
-                EmployeeId = employeeId,
-                Description = model.Description,
-                DateRaised = DateTime.UtcNow,
-                Priority = model.Priority,
-                Status = GrievanceStatus.Open,
-                Title = model.Title,
-                Type = grievanceType,
-                DocumentUrls = model.DocumentUrls.Select(url => new DocumentUrl { Url = url }).ToList()
-            };
-
-            await _grievanceRepository.Add(grievance);
-
-            var user = _httpContextAccessor.HttpContext.User;
-            var userId = Convert.ToInt32(user.FindFirst("uid")?.Value);
-            if (userId == null)
-            {
-                throw new EntityNotFoundException("User not found!!");
+                throw ex;
             }
-            var Employeeuser = await _userRepository.GetByIdAsync(userId);
-
-            var history = new GrievanceHistory
-            {
-                GrievanceId = grievance.GrievanceId,
-                HistoryType = "Raised Grievance",
-                RelatedEntityId = null,
-                DateChanged = DateTime.UtcNow,
-                StatusChange = $"Grievance is Raised by {Employeeuser.Name}",
-                
-            };
-            var historyDto = await _grievanceHistoryService.RecordHistoryAsync(history);
-
-            return MapToGrievanceDTO(grievance);
         }
 
         public async Task<IEnumerable<GrievanceDTO>> GetAllGrievancesAsync()
@@ -168,9 +182,9 @@ namespace EmployeeGrievanceRedressal.Services
                 EmployeeId = grievance.EmployeeId,
                 EmployeeName = grievance.Employee?.Name,
                 EmployeeImage= grievance.Employee?.UserImage,
-                Title = grievance.Title,// Safe navigation operator
-                SolverId = grievance.SolverId, // No need to check if SolverId is null
-                SolverName = grievance.Solver?.Name,  // Safe navigation operator
+                Title = grievance.Title,
+                SolverId = grievance.SolverId, 
+                SolverName = grievance.Solver?.Name,  
                 Description = grievance.Description,
                 DateRaised = grievance.DateRaised,
                 Priority = grievance.Priority,
@@ -350,6 +364,14 @@ namespace EmployeeGrievanceRedressal.Services
             var grievances = await _grievanceRepository.GetGrievancesWithEmployee();
             grievances = grievances.FindAll(x => x.Status == GrievanceStatus.Open);
             return grievances.Select(MapToGrievanceDTO);
+        }
+
+        public async Task<IEnumerable<GrievanceDTO>> GetAllGrievancesBySolver(int solverId)
+        {
+            var grievances = await _grievanceRepository.GetGrievancesWithEmployee();
+            grievances = grievances.FindAll(x => x.SolverId == solverId);
+            return grievances.Select(MapToGrievanceDTO);
+
         }
     }
 }

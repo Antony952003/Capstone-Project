@@ -1,4 +1,6 @@
-﻿using EmployeeGrievanceRedressal.Interfaces.RepositoryInterfaces;
+﻿using Azure.Core;
+using EmployeeGrievanceRedressal.Exceptions;
+using EmployeeGrievanceRedressal.Interfaces.RepositoryInterfaces;
 using EmployeeGrievanceRedressal.Models;
 using Microsoft.EntityFrameworkCore;
 using System.Collections.Generic;
@@ -17,16 +19,26 @@ namespace EmployeeGrievanceRedressal.Repositories
 
         public async Task<ApprovalRequest> GetByIdAsync(int id)
         {
-            return await _context.ApprovalRequests
+            var request =  await _context.ApprovalRequests
                 .Include(ar => ar.Employee)
                 .FirstOrDefaultAsync(ar => ar.ApprovalRequestId == id);
+            if (request == null)
+            {
+                throw new EntityNotFoundException("ApprovalRequest not found.");
+            }
+            return request;
         }
 
         public async Task<IEnumerable<ApprovalRequest>> GetAllAsync()
         {
-            return await _context.ApprovalRequests
+            var requests =  await _context.ApprovalRequests
                 .Include(ar => ar.Employee)
                 .ToListAsync();
+            if(requests.Count == 0)
+            {
+                throw new EntityNotFoundException("No approval requests found.");
+            }
+            return requests;
         }
 
         public async Task AddAsync(ApprovalRequest approvalRequest)

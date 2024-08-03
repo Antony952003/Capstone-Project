@@ -14,5 +14,6 @@ namespace EmployeeGrievanceRedressal.Interfaces.ServiceInterfaces
         Task<ApprovalRequestDTO> GetApprovalRequestByIdAsync(int id);
         Task<ApprovalRequestResponseDTO> ApproveRequestAsync(int id);
         Task<ApprovalRequestResponseDTO> RejectRequestAsync(int id);
+        Task<IEnumerable<ApprovalRequestDTO>> GetAllUserApprovalRequests(int userid);
     }
 }

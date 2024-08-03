@@ -16,6 +16,6 @@ namespace EmployeeGrievanceRedressal.Models.DTOs.Solution
         [Required]
         public string Description { get; set; }
 
-        public List<string> DocumentUrls { get; set; }
+        public List<string>? DocumentUrls { get; set; }
     }
 }

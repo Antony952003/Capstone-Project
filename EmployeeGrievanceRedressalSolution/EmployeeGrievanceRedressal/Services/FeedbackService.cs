@@ -30,8 +30,11 @@ namespace EmployeeGrievanceRedressal.Services
 
         public async Task<FeedbackDTO> ProvideFeedbackAsync(ProvideFeedbackDTO dto)
         {
-            // Validate if the solution exists
-            var solution = await _solutionRepository.GetByIdAsync(dto.SolutionId);
+            try
+            {
+                // Validate if the solution exists
+                var solution = await _solutionRepository.GetByIdAsync(dto.SolutionId);
+            var solver = await _userRepository.GetByIdAsync((int)solution.SolverId);
             if (solution == null)
             {
                 throw new EntityNotFoundException($"Solution with ID {dto.SolutionId} not found.");
@@ -43,8 +46,11 @@ namespace EmployeeGrievanceRedressal.Services
             {
                 throw new EntityNotFoundException($"Employee with ID {dto.EmployeeId} not found.");
             }
-
-            // Create feedback
+            var feedbacks = await _feedbackRepository.GetAllAsync();
+            var existingfeedback = feedbacks.FirstOrDefault(x => x.SolutionId == solution.SolutionId);
+            if(existingfeedback != null) {
+                throw new Exception("There is already a feedback given for this solution!!");
+            }
             var feedback = new Feedback
             {
                 SolutionId = dto.SolutionId,
@@ -53,14 +59,13 @@ namespace EmployeeGrievanceRedressal.Services
                 DateProvided = DateTime.Now,
             };
 
-            try
-            {
                 await _feedbackRepository.Add(feedback);
 
                 var feedbackdto =  new FeedbackDTO
                 {
                     FeedbackId = feedback.FeedbackId,
-                    SolutionId = feedback.SolutionId,
+                    SolutionTitle = solution.SolutionTitle,
+                    SolverName = solver.Name,
                     EmployeeId = feedback.EmployeeId,
                     EmployeeName = employee.Name,
                     Comments = feedback.Comments,
@@ -70,7 +75,7 @@ namespace EmployeeGrievanceRedressal.Services
                 {
                     GrievanceId = solution.GrievanceId,
                     HistoryType = "Feedback",
-                    RelatedEntityId = feedback.SolutionId,
+                    RelatedEntityId = feedback.FeedbackId,
                     DateChanged = DateTime.UtcNow,
                     StatusChange = $"Feedback Description : {feedback.Comments}",
                 };
@@ -80,13 +85,15 @@ namespace EmployeeGrievanceRedressal.Services
             }
             catch (Exception ex)
             {
-                throw new ServiceException("Error providing feedback", ex);
+                throw ex;
             }
         }
 
         public async Task<FeedbackDTO> GetFeedbackByIdAsync(int id)
         {
             var feedback = await _feedbackRepository.GetByIdAsync(id);
+            var solution = await _solutionRepository.GetByIdAsync(feedback.SolutionId);
+            var solver = await _userRepository.GetByIdAsync((int)solution.SolverId);
             if (feedback == null)
             {
                 throw new EntityNotFoundException($"Feedback with ID {id} not found.");
@@ -101,7 +108,8 @@ namespace EmployeeGrievanceRedressal.Services
             return new FeedbackDTO
             {
                 FeedbackId = feedback.FeedbackId,
-                SolutionId = feedback.SolutionId,
+                SolutionTitle = solution.SolutionTitle,
+                SolverName = solver.Name,
                 EmployeeId = feedback.EmployeeId,
                 EmployeeName = employee.Name,
                 Comments = feedback.Comments,

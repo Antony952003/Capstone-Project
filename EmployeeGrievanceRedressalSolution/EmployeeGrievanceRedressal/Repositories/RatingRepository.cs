@@ -1,4 +1,5 @@
-﻿using EmployeeGrievanceRedressal.Interfaces.RepositoryInterfaces;
+﻿using EmployeeGrievanceRedressal.Exceptions;
+using EmployeeGrievanceRedressal.Interfaces.RepositoryInterfaces;
 using EmployeeGrievanceRedressal.Models;
 using Microsoft.EntityFrameworkCore;
 
@@ -21,7 +22,16 @@ namespace EmployeeGrievanceRedressal.Repositories
 
         public async Task<IEnumerable<Rating>> GetRatingsBySolverIdAsync(int solverId)
         {
-            return await _context.Ratings.Where(r => r.SolverId == solverId).ToListAsync();
+
+            var ratings = await _context.Ratings.
+            Include(x => x.Grievance)
+                .ThenInclude(g => g.Employee)
+            .Where(r => r.SolverId == solverId).ToListAsync();
+            if(ratings.Count != 0)
+            {
+                return ratings;
+            }
+            throw new EntityNotFoundException("No ratings found for the specified solver.");
         }
     }
 

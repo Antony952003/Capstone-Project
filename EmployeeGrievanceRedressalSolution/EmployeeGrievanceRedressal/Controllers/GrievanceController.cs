@@ -148,5 +148,32 @@ namespace EmployeeGrievanceRedressal.Controllers
                 return StatusCode(500, new { Message = "An unexpected error occurred.", Details = ex.Message });
             }
         }
+        [HttpGet("GetAllGrievancesBySolver")]
+        [Authorize(Roles = "Solver")]
+        public async Task<IActionResult> GetAllGrievancesBySolver()
+        {
+            try
+            {
+                var userIdClaim = User.Claims.FirstOrDefault(c => c.Type == "uid").Value.ToString();
+                var grievance = await _grievanceService.GetAllGrievancesBySolver(Convert.ToInt32(userIdClaim));
+                return Ok(grievance);
+            }
+            catch (UnauthorizedAccessException ex)
+            {
+                return StatusCode(401, new { Message = "Unauthorized access error occurred.", Details = ex.Message });
+            }
+            catch (EntityNotFoundException ex)
+            {
+                return NotFound(new { Message = ex.Message });
+            }
+            catch (ServiceException ex)
+            {
+                return BadRequest(new { Message = ex.Message });
+            }
+            catch (Exception ex)
+            {
+                return StatusCode(500, new { Message = "An unexpected error occurred.", Details = ex.Message });
+            }
+        }
     }
 }

@@ -61,25 +61,42 @@ namespace EmployeeGrievanceRedressal.Services
                 throw new EntityNotFoundException($"Grievance with ID {dto.GrievanceId} not found.");
             }
 
-            // Map DTO to Solution entity
-            var solution = new Solution
+            if(grievance.Status != GrievanceStatus.InProgress)
             {
-                GrievanceId = dto.GrievanceId,
-                SolverId = dto.SolverId,
-                SolutionTitle = dto.SolutionTitle,
-                Description = dto.Description,
-                DateProvided = DateTime.UtcNow,
-                DocumentUrls = dto.DocumentUrls?.Select(url => new DocumentUrl
-                {
-                    Url = url,
-                    GrievanceId = dto.GrievanceId
-                }).ToList()
-            };
+                throw new Exception("Can Provide solution only to open grievances !!");
+            }
 
-            
+                // Map DTO to Solution entity
+                // Map DTO to Solution entity
+                var solution = new Solution
+                {
+                    GrievanceId = dto.GrievanceId,
+                    SolverId = dto.SolverId,
+                    SolutionTitle = dto.SolutionTitle,
+                    Description = dto.Description,
+                    DateProvided = DateTime.UtcNow
+                };
+
+                // Save the solution without DocumentUrls
                 await _solutionRepository.Add(solution);
 
-                // Optionally, you may want to return a DTO or some confirmation
+                // Retrieve the SolutionId
+                var solutionId = solution.SolutionId;
+
+                // Update DocumentUrls with the SolutionId
+                if (dto.DocumentUrls != null && dto.DocumentUrls.Any())
+                {
+                    var documentUrls = dto.DocumentUrls.Select(url => new DocumentUrl
+                    {
+                        Url = url,
+                        GrievanceId = dto.GrievanceId,
+                        SolutionId = solutionId // Add the SolutionId here
+                    }).ToList();
+
+                    solution.DocumentUrls = documentUrls;
+                    _solutionRepository.Update(solution);
+                }
+
                 var solutiondto =  new SolutionDTO
                 {
                     SolutionId = solution.SolutionId,
@@ -89,7 +106,7 @@ namespace EmployeeGrievanceRedressal.Services
                     SolutionTitle = solution.SolutionTitle,
                     Description = solution.Description,
                     DateProvided = solution.DateProvided,
-                    DocumentUrls = solution.DocumentUrls.Select(d => d.Url).ToList()
+                    DocumentUrls = solution?.DocumentUrls?.Select(d => d.Url).ToList()
                 };
                 var history = new GrievanceHistory
                 {
@@ -97,7 +114,7 @@ namespace EmployeeGrievanceRedressal.Services
                     HistoryType = "Solution",
                     RelatedEntityId = solution.SolutionId,
                     DateChanged = DateTime.UtcNow,
-                    StatusChange = $"Solution Title : {solution.SolutionTitle} \n Solution Description : {solution.Description}",
+                    StatusChange = $"{solution.SolutionTitle}",
                 };
                 var historyDto = await _grievanceHistoryService.RecordHistoryAsync(history);
                 return solutiondto;
