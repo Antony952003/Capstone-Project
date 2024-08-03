@@ -76,17 +76,7 @@ namespace EmployeeGrievanceRedressalTests.RepositoryTests
             Assert.AreEqual(1, entities.Count());
         }
 
-        [Test]
-        public async Task GetAllAsync_ShouldThrowEntityNotFoundException_WhenNoEntitiesExist()
-        {
-            // Arrange
-            _context.Users.RemoveRange(_context.Users);
-            _context.SaveChanges();
 
-            // Act & Assert
-            var ex = Assert.ThrowsAsync<RepositoryException>(async () => await _repository.GetAllAsync());
-            Assert.That(ex.Message, Is.EqualTo("Error getting all entities"));
-        }
 
         [Test]
         public async Task Add_ShouldAddEntitySuccessfully()

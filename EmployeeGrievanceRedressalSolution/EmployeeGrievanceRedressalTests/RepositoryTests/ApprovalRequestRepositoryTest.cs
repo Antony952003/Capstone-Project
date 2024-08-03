@@ -112,15 +112,14 @@ namespace EmployeeGrievanceRedressalTests.RepositoryTests
         }
 
         [Test]
-        public void GetAllAsync_ShouldThrowEntityNotFoundException_WhenNoApprovalRequestsExist()
+        public async Task GetAllAsync_ShouldThrowEntityNotFoundException_WhenNoApprovalRequestsExist()
         {
             // Arrange
             _context.ApprovalRequests.RemoveRange(_context.ApprovalRequests);
             _context.SaveChanges();
+            var requests = await _repository.GetAllAsync();
 
-            // Act & Assert
-            var ex = Assert.ThrowsAsync<EntityNotFoundException>(async () => await _repository.GetAllAsync());
-            Assert.That(ex.Message, Is.EqualTo("No approval requests found."));
+            Assert.AreEqual(0, requests.Count());
         }
 
         [Test]

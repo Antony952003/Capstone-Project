@@ -5,6 +5,8 @@ VisualStudioVersion = 17.9.34723.18
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EmployeeGrievanceRedressal", "EmployeeGrievanceRedressal\EmployeeGrievanceRedressal.csproj", "{95CDA3FC-D553-4F17-A2C9-C3AF522C2862}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EmployeeGrievanceRedressalTests", "EmployeeGrievanceRedressalTests\EmployeeGrievanceRedressalTests.csproj", "{D63F48AD-25DF-4AA1-91BD-D911A0959A36}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU

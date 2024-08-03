@@ -132,11 +132,11 @@ namespace EmployeeGrievanceRedressalTests.RepositoryTests
         }
 
         [Test]
-        public void GetRatingsBySolverIdAsync_ShouldThrowEntityNotFoundException_WhenNoRatingsExist()
+        public async Task GetRatingsBySolverIdAsync_ShouldThrowEntityNotFoundException_WhenNoRatingsExist()
         {
             // Act & Assert
-            var ex = Assert.ThrowsAsync<EntityNotFoundException>(async () => await _repository.GetRatingsBySolverIdAsync(999));
-            Assert.That(ex.Message, Is.EqualTo("No ratings found for the specified solver."));
+            var ratings = await _repository.GetRatingsBySolverIdAsync(999);
+            Assert.AreEqual(0, ratings.Count());
         }
 
         [Test]

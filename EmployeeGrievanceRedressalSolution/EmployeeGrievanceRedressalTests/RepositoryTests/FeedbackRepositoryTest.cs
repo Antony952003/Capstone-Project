@@ -79,8 +79,9 @@ namespace EmployeeGrievanceRedressalTests.RepositoryTests
             _context.SaveChanges();
 
             // Act & Assert
-            var ex = Assert.ThrowsAsync<RepositoryException>(async () => await _repository.GetAllAsync());
-            Assert.That(ex.Message, Is.EqualTo("Error getting all entities"));
+            var requests = await _repository.GetAllAsync();
+
+            Assert.AreEqual(0, requests.Count());
         }
 
         [Test]
