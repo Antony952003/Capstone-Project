@@ -1,51 +1,51 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<coverage line-rate="0.2932" branch-rate="0.0964" version="1.9" timestamp="1722664417" lines-covered="984" lines-valid="3355" branches-covered="27" branches-valid="280">
+<coverage line-rate="0.2955" branch-rate="0.0935" version="1.9" timestamp="1722672679" lines-covered="962" lines-valid="3255" branches-covered="26" branches-valid="278">
   <sources>
     <source>C:\Users\VC\</source>
   </sources>
   <packages>
-    <package name="EmployeeGrievanceRedressal" line-rate="0.0984" branch-rate="0.0526" complexity="623">
+    <package name="EmployeeGrievanceRedressal" line-rate="0.09759999999999999" branch-rate="0.0526" complexity="623">
       <classes>
         <class name="EmployeeGrievanceContext" filename="Desktop\Capstone Project\EmployeeGrievanceRedressalSolution\EmployeeGrievanceRedressal\Contexts\EmployeeGrievanceContext.cs" line-rate="1" branch-rate="1" complexity="10">
           <methods>
             <method name="get_Users" signature="()" line-rate="1" branch-rate="1" complexity="1">
               <lines>
-                <line number="9" hits="116" branch="False" />
+                <line number="9" hits="106" branch="False" />
               </lines>
             </method>
             <method name="get_Grievances" signature="()" line-rate="1" branch-rate="1" complexity="1">
               <lines>
-                <line number="10" hits="81" branch="False" />
+                <line number="10" hits="51" branch="False" />
               </lines>
             </method>
             <method name="get_Solutions" signature="()" line-rate="1" branch-rate="1" complexity="1">
               <lines>
-                <line number="11" hits="92" branch="False" />
+                <line number="11" hits="82" branch="False" />
               </lines>
             </method>
             <method name="get_Feedbacks" signature="()" line-rate="1" branch-rate="1" complexity="1">
               <lines>
-                <line number="12" hits="90" branch="False" />
+                <line number="12" hits="80" branch="False" />
               </lines>
             </method>
             <method name="get_ApprovalRequests" signature="()" line-rate="1" branch-rate="1" complexity="1">
               <lines>
-                <line number="13" hits="86" branch="False" />
+                <line number="13" hits="76" branch="False" />
               </lines>
             </method>
             <method name="get_GrievanceHistories" signature="()" line-rate="1" branch-rate="1" complexity="1">
               <lines>
-                <line number="14" hits="61" branch="False" />
+                <line number="14" hits="51" branch="False" />
               </lines>
             </method>
             <method name="get_Ratings" signature="()" line-rate="1" branch-rate="1" complexity="1">
               <lines>
-                <line number="15" hits="74" branch="False" />
+                <line number="15" hits="64" branch="False" />
               </lines>
             </method>
             <method name="get_RefreshTokens" signature="()" line-rate="1" branch-rate="1" complexity="1">
               <lines>
-                <line number="16" hits="61" branch="False" />
+                <line number="16" hits="51" branch="False" />
               </lines>
             </method>
             <method name="OnModelCreating" signature="(Microsoft.EntityFrameworkCore.ModelBuilder)" line-rate="1" branch-rate="1" complexity="1">
@@ -114,21 +114,21 @@
             </method>
             <method name=".ctor" signature="(Microsoft.EntityFrameworkCore.DbContextOptions`1&lt;EmployeeGrievanceContext&gt;)" line-rate="1" branch-rate="1" complexity="1">
               <lines>
-                <line number="6" hits="61" branch="False" />
-                <line number="7" hits="61" branch="False" />
-                <line number="8" hits="61" branch="False" />
+                <line number="6" hits="51" branch="False" />
+                <line number="7" hits="51" branch="False" />
+                <line number="8" hits="51" branch="False" />
               </lines>
             </method>
           </methods>
           <lines>
-            <line number="9" hits="116" branch="False" />
-            <line number="10" hits="81" branch="False" />
-            <line number="11" hits="92" branch="False" />
-            <line number="12" hits="90" branch="False" />
-            <line number="13" hits="86" branch="False" />
-            <line number="14" hits="61" branch="False" />
-            <line number="15" hits="74" branch="False" />
-            <line number="16" hits="61" branch="False" />
+            <line number="9" hits="106" branch="False" />
+            <line number="10" hits="51" branch="False" />
+            <line number="11" hits="82" branch="False" />
+            <line number="12" hits="80" branch="False" />
+            <line number="13" hits="76" branch="False" />
+            <line number="14" hits="51" branch="False" />
+            <line number="15" hits="64" branch="False" />
+            <line number="16" hits="51" branch="False" />
             <line number="19" hits="1" branch="False" />
             <line number="21" hits="1" branch="False" />
             <line number="22" hits="1" branch="False" />
@@ -189,9 +189,9 @@
             <line number="99" hits="1" branch="False" />
             <line number="100" hits="1" branch="False" />
             <line number="102" hits="1" branch="False" />
-            <line number="6" hits="61" branch="False" />
-            <line number="7" hits="61" branch="False" />
-            <line number="8" hits="61" branch="False" />
+            <line number="6" hits="51" branch="False" />
+            <line number="7" hits="51" branch="False" />
+            <line number="8" hits="51" branch="False" />
           </lines>
         </class>
         <class name="RatingsController" filename="Desktop\Capstone Project\EmployeeGrievanceRedressalSolution\EmployeeGrievanceRedressal\Controllers\RatingController.cs" line-rate="0" branch-rate="1" complexity="1">
@@ -4902,10 +4902,10 @@
             </method>
             <method name=".ctor" signature="(EmployeeGrievanceContext)" line-rate="1" branch-rate="1" complexity="1">
               <lines>
-                <line number="11" hits="50" branch="False" />
-                <line number="12" hits="50" branch="False" />
-                <line number="13" hits="50" branch="False" />
-                <line number="14" hits="50" branch="False" />
+                <line number="11" hits="40" branch="False" />
+                <line number="12" hits="40" branch="False" />
+                <line number="13" hits="40" branch="False" />
+                <line number="14" hits="40" branch="False" />
               </lines>
             </method>
           </methods>
@@ -4928,10 +4928,10 @@
             <line number="84" hits="3" branch="False" />
             <line number="85" hits="3" branch="False" />
             <line number="87" hits="3" branch="False" />
-            <line number="11" hits="50" branch="False" />
-            <line number="12" hits="50" branch="False" />
-            <line number="13" hits="50" branch="False" />
-            <line number="14" hits="50" branch="False" />
+            <line number="11" hits="40" branch="False" />
+            <line number="12" hits="40" branch="False" />
+            <line number="13" hits="40" branch="False" />
+            <line number="14" hits="40" branch="False" />
           </lines>
         </class>
         <class name="EmployeeGrievanceRedressal.Repositories.Repository`1/&lt;Add&gt;d__4" filename="Desktop\Capstone Project\EmployeeGrievanceRedressalSolution\EmployeeGrievanceRedressal\Repositories\Repository.cs" line-rate="1" branch-rate="1" complexity="1">
@@ -5496,16 +5496,16 @@
             <line number="11" hits="12" branch="False" />
           </lines>
         </class>
-        <class name="EmployeeGrievanceRedressal.Models.Grievance" filename="Desktop\Capstone Project\EmployeeGrievanceRedressalSolution\EmployeeGrievanceRedressal\Models\Grievance.cs" line-rate="0.6428" branch-rate="1" complexity="14">
+        <class name="EmployeeGrievanceRedressal.Models.Grievance" filename="Desktop\Capstone Project\EmployeeGrievanceRedressalSolution\EmployeeGrievanceRedressal\Models\Grievance.cs" line-rate="0.5" branch-rate="1" complexity="14">
           <methods>
             <method name="get_GrievanceId" signature="()" line-rate="1" branch-rate="1" complexity="1">
               <lines>
-                <line number="5" hits="18" branch="False" />
+                <line number="5" hits="8" branch="False" />
               </lines>
             </method>
-            <method name="get_EmployeeId" signature="()" line-rate="1" branch-rate="1" complexity="1">
+            <method name="get_EmployeeId" signature="()" line-rate="0" branch-rate="1" complexity="1">
               <lines>
-                <line number="6" hits="10" branch="False" />
+                <line number="6" hits="0" branch="False" />
               </lines>
             </method>
             <method name="get_Employee" signature="()" line-rate="1" branch-rate="1" complexity="1">
@@ -5530,17 +5530,17 @@
             </method>
             <method name="get_Description" signature="()" line-rate="1" branch-rate="1" complexity="1">
               <lines>
-                <line number="11" hits="18" branch="False" />
+                <line number="11" hits="8" branch="False" />
               </lines>
             </method>
             <method name="get_DateRaised" signature="()" line-rate="1" branch-rate="1" complexity="1">
               <lines>
-                <line number="12" hits="14" branch="False" />
+                <line number="12" hits="4" branch="False" />
               </lines>
             </method>
             <method name="get_Priority" signature="()" line-rate="1" branch-rate="1" complexity="1">
               <lines>
-                <line number="13" hits="18" branch="False" />
+                <line number="13" hits="8" branch="False" />
               </lines>
             </method>
             <method name="get_Type" signature="()" line-rate="0" branch-rate="1" complexity="1">
@@ -5548,9 +5548,9 @@
                 <line number="14" hits="0" branch="False" />
               </lines>
             </method>
-            <method name="get_Status" signature="()" line-rate="1" branch-rate="1" complexity="1">
+            <method name="get_Status" signature="()" line-rate="0" branch-rate="1" complexity="1">
               <lines>
-                <line number="15" hits="10" branch="False" />
+                <line number="15" hits="0" branch="False" />
               </lines>
             </method>
             <method name="get_Solutions" signature="()" line-rate="0" branch-rate="1" complexity="1">
@@ -5570,17 +5570,17 @@
             </method>
           </methods>
           <lines>
-            <line number="5" hits="18" branch="False" />
-            <line number="6" hits="10" branch="False" />
+            <line number="5" hits="8" branch="False" />
+            <line number="6" hits="0" branch="False" />
             <line number="7" hits="8" branch="False" />
             <line number="8" hits="8" branch="False" />
             <line number="9" hits="0" branch="False" />
             <line number="10" hits="8" branch="False" />
-            <line number="11" hits="18" branch="False" />
-            <line number="12" hits="14" branch="False" />
-            <line number="13" hits="18" branch="False" />
+            <line number="11" hits="8" branch="False" />
+            <line number="12" hits="4" branch="False" />
+            <line number="13" hits="8" branch="False" />
             <line number="14" hits="0" branch="False" />
-            <line number="15" hits="10" branch="False" />
+            <line number="15" hits="0" branch="False" />
             <line number="16" hits="0" branch="False" />
             <line number="17" hits="0" branch="False" />
             <line number="18" hits="0" branch="False" />
@@ -8986,7 +8986,7 @@
         </class>
       </classes>
     </package>
-    <package name="EmployeeGrievanceRedressalTests" line-rate="0.9006000000000001" branch-rate="0.9285" complexity="104">
+    <package name="EmployeeGrievanceRedressalTests" line-rate="0.9986" branch-rate="1" complexity="86">
       <classes>
         <class name="AutoGeneratedProgram" filename=".nuget\packages\microsoft.net.test.sdk\17.5.0\build\netcoreapp3.1\Microsoft.NET.Test.Sdk.Program.cs" line-rate="0" branch-rate="1" complexity="1">
           <methods>
@@ -10076,378 +10076,6 @@
             <line number="130" hits="1" branch="False" />
             <line number="131" hits="1" branch="False" />
             <line number="132" hits="1" branch="False" />
-          </lines>
-        </class>
-        <class name="EmployeeGrievanceRedressalTests.RepositoryTests.GrievanceRepositoryTest" filename="Desktop\Capstone Project\EmployeeGrievanceRedressalSolution\EmployeeGrievanceRedressalTests\RepositoryTests\GrievanceRepositoryTest.cs" line-rate="0.8695" branch-rate="0.5" complexity="3">
-          <methods>
-            <method name="SetUp" signature="()" line-rate="0.875" branch-rate="1" complexity="1">
-              <lines>
-                <line number="19" hits="10" branch="False" />
-                <line number="20" hits="10" branch="False" />
-                <line number="21" hits="10" branch="False" />
-                <line number="22" hits="10" branch="False" />
-                <line number="24" hits="10" branch="False" />
-                <line number="25" hits="10" branch="False" />
-                <line number="27" hits="10" branch="False" />
-                <line number="28" hits="0" branch="False" />
-              </lines>
-            </method>
-            <method name="SeedDatabase" signature="()" line-rate="0.8665999999999999" branch-rate="0.5" complexity="2">
-              <lines>
-                <line number="31" hits="10" branch="False" />
-                <line number="32" hits="10" branch="True" condition-coverage="50% (1/2)">
-                  <conditions>
-                    <condition number="22" type="jump" coverage="50%" />
-                  </conditions>
-                </line>
-                <line number="33" hits="10" branch="False" />
-                <line number="34" hits="10" branch="False" />
-                <line number="35" hits="10" branch="False" />
-                <line number="36" hits="10" branch="False" />
-                <line number="37" hits="10" branch="False" />
-                <line number="38" hits="10" branch="False" />
-                <line number="39" hits="10" branch="False" />
-                <line number="40" hits="10" branch="False" />
-                <line number="41" hits="10" branch="False" />
-                <line number="42" hits="10" branch="False" />
-                <line number="43" hits="10" branch="False" />
-                <line number="44" hits="0" branch="False" />
-                <line number="45" hits="0" branch="False" />
-              </lines>
-            </method>
-          </methods>
-          <lines>
-            <line number="19" hits="10" branch="False" />
-            <line number="20" hits="10" branch="False" />
-            <line number="21" hits="10" branch="False" />
-            <line number="22" hits="10" branch="False" />
-            <line number="24" hits="10" branch="False" />
-            <line number="25" hits="10" branch="False" />
-            <line number="27" hits="10" branch="False" />
-            <line number="28" hits="0" branch="False" />
-            <line number="31" hits="10" branch="False" />
-            <line number="32" hits="10" branch="True" condition-coverage="50% (1/2)">
-              <conditions>
-                <condition number="22" type="jump" coverage="50%" />
-              </conditions>
-            </line>
-            <line number="33" hits="10" branch="False" />
-            <line number="34" hits="10" branch="False" />
-            <line number="35" hits="10" branch="False" />
-            <line number="36" hits="10" branch="False" />
-            <line number="37" hits="10" branch="False" />
-            <line number="38" hits="10" branch="False" />
-            <line number="39" hits="10" branch="False" />
-            <line number="40" hits="10" branch="False" />
-            <line number="41" hits="10" branch="False" />
-            <line number="42" hits="10" branch="False" />
-            <line number="43" hits="10" branch="False" />
-            <line number="44" hits="0" branch="False" />
-            <line number="45" hits="0" branch="False" />
-          </lines>
-        </class>
-        <class name="EmployeeGrievanceRedressalTests.RepositoryTests.GrievanceRepositoryTest/&lt;&lt;GetAllAsync_ShouldThrowEntityNotFoundException_WhenNoEntitiesExist&gt;b__7_0&gt;d" filename="Desktop\Capstone Project\EmployeeGrievanceRedressalSolution\EmployeeGrievanceRedressalTests\RepositoryTests\GrievanceRepositoryTest.cs" line-rate="0" branch-rate="1" complexity="1">
-          <methods>
-            <method name="MoveNext" signature="()" line-rate="0" branch-rate="1" complexity="1">
-              <lines>
-                <line number="85" hits="0" branch="False" />
-              </lines>
-            </method>
-          </methods>
-          <lines>
-            <line number="85" hits="0" branch="False" />
-          </lines>
-        </class>
-        <class name="EmployeeGrievanceRedressalTests.RepositoryTests.GrievanceRepositoryTest/&lt;&lt;GetByIdAsync_ShouldThrowEntityNotFoundException_WhenEntityDoesNotExist&gt;b__5_0&gt;d" filename="Desktop\Capstone Project\EmployeeGrievanceRedressalSolution\EmployeeGrievanceRedressalTests\RepositoryTests\GrievanceRepositoryTest.cs" line-rate="0" branch-rate="1" complexity="1">
-          <methods>
-            <method name="MoveNext" signature="()" line-rate="0" branch-rate="1" complexity="1">
-              <lines>
-                <line number="62" hits="0" branch="False" />
-              </lines>
-            </method>
-          </methods>
-          <lines>
-            <line number="62" hits="0" branch="False" />
-          </lines>
-        </class>
-        <class name="EmployeeGrievanceRedressalTests.RepositoryTests.GrievanceRepositoryTest/&lt;&gt;c__DisplayClass11_0/&lt;&lt;Update_ShouldThrowRepositoryException_WhenExceptionIsThrown&gt;b__0&gt;d" filename="Desktop\Capstone Project\EmployeeGrievanceRedressalSolution\EmployeeGrievanceRedressalTests\RepositoryTests\GrievanceRepositoryTest.cs" line-rate="0" branch-rate="1" complexity="1">
-          <methods>
-            <method name="MoveNext" signature="()" line-rate="0" branch-rate="1" complexity="1">
-              <lines>
-                <line number="154" hits="0" branch="False" />
-              </lines>
-            </method>
-          </methods>
-          <lines>
-            <line number="154" hits="0" branch="False" />
-          </lines>
-        </class>
-        <class name="EmployeeGrievanceRedressalTests.RepositoryTests.GrievanceRepositoryTest/&lt;&gt;c__DisplayClass13_0/&lt;&lt;Remove_ShouldThrowRepositoryException_WhenExceptionIsThrown&gt;b__0&gt;d" filename="Desktop\Capstone Project\EmployeeGrievanceRedressalSolution\EmployeeGrievanceRedressalTests\RepositoryTests\GrievanceRepositoryTest.cs" line-rate="0" branch-rate="1" complexity="1">
-          <methods>
-            <method name="MoveNext" signature="()" line-rate="0" branch-rate="1" complexity="1">
-              <lines>
-                <line number="183" hits="0" branch="False" />
-              </lines>
-            </method>
-          </methods>
-          <lines>
-            <line number="183" hits="0" branch="False" />
-          </lines>
-        </class>
-        <class name="EmployeeGrievanceRedressalTests.RepositoryTests.GrievanceRepositoryTest/&lt;&gt;c__DisplayClass9_0/&lt;&lt;Add_ShouldThrowRepositoryException_WhenExceptionIsThrown&gt;b__0&gt;d" filename="Desktop\Capstone Project\EmployeeGrievanceRedressalSolution\EmployeeGrievanceRedressalTests\RepositoryTests\GrievanceRepositoryTest.cs" line-rate="0" branch-rate="1" complexity="1">
-          <methods>
-            <method name="MoveNext" signature="()" line-rate="0" branch-rate="1" complexity="1">
-              <lines>
-                <line number="121" hits="0" branch="False" />
-              </lines>
-            </method>
-          </methods>
-          <lines>
-            <line number="121" hits="0" branch="False" />
-          </lines>
-        </class>
-        <class name="EmployeeGrievanceRedressalTests.RepositoryTests.GrievanceRepositoryTest/&lt;Add_ShouldAddEntitySuccessfully&gt;d__8" filename="Desktop\Capstone Project\EmployeeGrievanceRedressalSolution\EmployeeGrievanceRedressalTests\RepositoryTests\GrievanceRepositoryTest.cs" line-rate="0" branch-rate="1" complexity="1">
-          <methods>
-            <method name="MoveNext" signature="()" line-rate="0" branch-rate="1" complexity="1">
-              <lines>
-                <line number="91" hits="0" branch="False" />
-                <line number="93" hits="0" branch="False" />
-                <line number="94" hits="0" branch="False" />
-                <line number="95" hits="0" branch="False" />
-                <line number="96" hits="0" branch="False" />
-                <line number="97" hits="0" branch="False" />
-                <line number="98" hits="0" branch="False" />
-                <line number="99" hits="0" branch="False" />
-                <line number="100" hits="0" branch="False" />
-                <line number="101" hits="0" branch="False" />
-                <line number="102" hits="0" branch="False" />
-                <line number="103" hits="0" branch="False" />
-                <line number="106" hits="0" branch="False" />
-                <line number="109" hits="0" branch="False" />
-                <line number="110" hits="0" branch="False" />
-                <line number="111" hits="0" branch="False" />
-                <line number="112" hits="0" branch="False" />
-              </lines>
-            </method>
-          </methods>
-          <lines>
-            <line number="91" hits="0" branch="False" />
-            <line number="93" hits="0" branch="False" />
-            <line number="94" hits="0" branch="False" />
-            <line number="95" hits="0" branch="False" />
-            <line number="96" hits="0" branch="False" />
-            <line number="97" hits="0" branch="False" />
-            <line number="98" hits="0" branch="False" />
-            <line number="99" hits="0" branch="False" />
-            <line number="100" hits="0" branch="False" />
-            <line number="101" hits="0" branch="False" />
-            <line number="102" hits="0" branch="False" />
-            <line number="103" hits="0" branch="False" />
-            <line number="106" hits="0" branch="False" />
-            <line number="109" hits="0" branch="False" />
-            <line number="110" hits="0" branch="False" />
-            <line number="111" hits="0" branch="False" />
-            <line number="112" hits="0" branch="False" />
-          </lines>
-        </class>
-        <class name="EmployeeGrievanceRedressalTests.RepositoryTests.GrievanceRepositoryTest/&lt;Add_ShouldThrowRepositoryException_WhenExceptionIsThrown&gt;d__9" filename="Desktop\Capstone Project\EmployeeGrievanceRedressalSolution\EmployeeGrievanceRedressalTests\RepositoryTests\GrievanceRepositoryTest.cs" line-rate="0" branch-rate="1" complexity="1">
-          <methods>
-            <method name="MoveNext" signature="()" line-rate="0" branch-rate="1" complexity="1">
-              <lines>
-                <line number="116" hits="0" branch="False" />
-                <line number="118" hits="0" branch="False" />
-                <line number="122" hits="0" branch="False" />
-              </lines>
-            </method>
-          </methods>
-          <lines>
-            <line number="116" hits="0" branch="False" />
-            <line number="118" hits="0" branch="False" />
-            <line number="122" hits="0" branch="False" />
-          </lines>
-        </class>
-        <class name="EmployeeGrievanceRedressalTests.RepositoryTests.GrievanceRepositoryTest/&lt;GetAllAsync_ShouldReturnAllEntities&gt;d__6" filename="Desktop\Capstone Project\EmployeeGrievanceRedressalSolution\EmployeeGrievanceRedressalTests\RepositoryTests\GrievanceRepositoryTest.cs" line-rate="0" branch-rate="1" complexity="1">
-          <methods>
-            <method name="MoveNext" signature="()" line-rate="0" branch-rate="1" complexity="1">
-              <lines>
-                <line number="68" hits="0" branch="False" />
-                <line number="70" hits="0" branch="False" />
-                <line number="73" hits="0" branch="False" />
-                <line number="74" hits="0" branch="False" />
-                <line number="75" hits="0" branch="False" />
-              </lines>
-            </method>
-          </methods>
-          <lines>
-            <line number="68" hits="0" branch="False" />
-            <line number="70" hits="0" branch="False" />
-            <line number="73" hits="0" branch="False" />
-            <line number="74" hits="0" branch="False" />
-            <line number="75" hits="0" branch="False" />
-          </lines>
-        </class>
-        <class name="EmployeeGrievanceRedressalTests.RepositoryTests.GrievanceRepositoryTest/&lt;GetAllAsync_ShouldThrowEntityNotFoundException_WhenNoEntitiesExist&gt;d__7" filename="Desktop\Capstone Project\EmployeeGrievanceRedressalSolution\EmployeeGrievanceRedressalTests\RepositoryTests\GrievanceRepositoryTest.cs" line-rate="0" branch-rate="1" complexity="1">
-          <methods>
-            <method name="MoveNext" signature="()" line-rate="0" branch-rate="1" complexity="1">
-              <lines>
-                <line number="79" hits="0" branch="False" />
-                <line number="81" hits="0" branch="False" />
-                <line number="82" hits="0" branch="False" />
-                <line number="86" hits="0" branch="False" />
-                <line number="87" hits="0" branch="False" />
-              </lines>
-            </method>
-          </methods>
-          <lines>
-            <line number="79" hits="0" branch="False" />
-            <line number="81" hits="0" branch="False" />
-            <line number="82" hits="0" branch="False" />
-            <line number="86" hits="0" branch="False" />
-            <line number="87" hits="0" branch="False" />
-          </lines>
-        </class>
-        <class name="EmployeeGrievanceRedressalTests.RepositoryTests.GrievanceRepositoryTest/&lt;GetByIdAsync_ShouldReturnEntity_WhenEntityExists&gt;d__4" filename="Desktop\Capstone Project\EmployeeGrievanceRedressalSolution\EmployeeGrievanceRedressalTests\RepositoryTests\GrievanceRepositoryTest.cs" line-rate="0" branch-rate="1" complexity="1">
-          <methods>
-            <method name="MoveNext" signature="()" line-rate="0" branch-rate="1" complexity="1">
-              <lines>
-                <line number="49" hits="0" branch="False" />
-                <line number="51" hits="0" branch="False" />
-                <line number="54" hits="0" branch="False" />
-                <line number="55" hits="0" branch="False" />
-                <line number="56" hits="0" branch="False" />
-              </lines>
-            </method>
-          </methods>
-          <lines>
-            <line number="49" hits="0" branch="False" />
-            <line number="51" hits="0" branch="False" />
-            <line number="54" hits="0" branch="False" />
-            <line number="55" hits="0" branch="False" />
-            <line number="56" hits="0" branch="False" />
-          </lines>
-        </class>
-        <class name="EmployeeGrievanceRedressalTests.RepositoryTests.GrievanceRepositoryTest/&lt;GetByIdAsync_ShouldThrowEntityNotFoundException_WhenEntityDoesNotExist&gt;d__5" filename="Desktop\Capstone Project\EmployeeGrievanceRedressalSolution\EmployeeGrievanceRedressalTests\RepositoryTests\GrievanceRepositoryTest.cs" line-rate="0" branch-rate="1" complexity="1">
-          <methods>
-            <method name="MoveNext" signature="()" line-rate="0" branch-rate="1" complexity="1">
-              <lines>
-                <line number="60" hits="0" branch="False" />
-                <line number="63" hits="0" branch="False" />
-                <line number="64" hits="0" branch="False" />
-              </lines>
-            </method>
-          </methods>
-          <lines>
-            <line number="60" hits="0" branch="False" />
-            <line number="63" hits="0" branch="False" />
-            <line number="64" hits="0" branch="False" />
-          </lines>
-        </class>
-        <class name="EmployeeGrievanceRedressalTests.RepositoryTests.GrievanceRepositoryTest/&lt;Remove_ShouldRemoveEntitySuccessfully&gt;d__12" filename="Desktop\Capstone Project\EmployeeGrievanceRedressalSolution\EmployeeGrievanceRedressalTests\RepositoryTests\GrievanceRepositoryTest.cs" line-rate="0" branch-rate="1" complexity="1">
-          <methods>
-            <method name="MoveNext" signature="()" line-rate="0" branch-rate="1" complexity="1">
-              <lines>
-                <line number="161" hits="0" branch="False" />
-                <line number="163" hits="0" branch="False" />
-                <line number="166" hits="0" branch="False" />
-                <line number="167" hits="0" branch="False" />
-                <line number="170" hits="0" branch="False" />
-                <line number="171" hits="0" branch="False" />
-                <line number="172" hits="0" branch="False" />
-              </lines>
-            </method>
-          </methods>
-          <lines>
-            <line number="161" hits="0" branch="False" />
-            <line number="163" hits="0" branch="False" />
-            <line number="166" hits="0" branch="False" />
-            <line number="167" hits="0" branch="False" />
-            <line number="170" hits="0" branch="False" />
-            <line number="171" hits="0" branch="False" />
-            <line number="172" hits="0" branch="False" />
-          </lines>
-        </class>
-        <class name="EmployeeGrievanceRedressalTests.RepositoryTests.GrievanceRepositoryTest/&lt;Remove_ShouldThrowRepositoryException_WhenExceptionIsThrown&gt;d__13" filename="Desktop\Capstone Project\EmployeeGrievanceRedressalSolution\EmployeeGrievanceRedressalTests\RepositoryTests\GrievanceRepositoryTest.cs" line-rate="0" branch-rate="1" complexity="1">
-          <methods>
-            <method name="MoveNext" signature="()" line-rate="0" branch-rate="1" complexity="1">
-              <lines>
-                <line number="176" hits="0" branch="False" />
-                <line number="178" hits="0" branch="False" />
-                <line number="179" hits="0" branch="False" />
-                <line number="180" hits="0" branch="False" />
-                <line number="184" hits="0" branch="False" />
-                <line number="185" hits="0" branch="False" />
-                <line number="186" hits="0" branch="False" />
-              </lines>
-            </method>
-          </methods>
-          <lines>
-            <line number="176" hits="0" branch="False" />
-            <line number="178" hits="0" branch="False" />
-            <line number="179" hits="0" branch="False" />
-            <line number="180" hits="0" branch="False" />
-            <line number="184" hits="0" branch="False" />
-            <line number="185" hits="0" branch="False" />
-            <line number="186" hits="0" branch="False" />
-          </lines>
-        </class>
-        <class name="EmployeeGrievanceRedressalTests.RepositoryTests.GrievanceRepositoryTest/&lt;Update_ShouldThrowRepositoryException_WhenExceptionIsThrown&gt;d__11" filename="Desktop\Capstone Project\EmployeeGrievanceRedressalSolution\EmployeeGrievanceRedressalTests\RepositoryTests\GrievanceRepositoryTest.cs" line-rate="0" branch-rate="1" complexity="1">
-          <methods>
-            <method name="MoveNext" signature="()" line-rate="0" branch-rate="1" complexity="1">
-              <lines>
-                <line number="141" hits="0" branch="False" />
-                <line number="143" hits="0" branch="False" />
-                <line number="144" hits="0" branch="False" />
-                <line number="145" hits="0" branch="False" />
-                <line number="146" hits="0" branch="False" />
-                <line number="147" hits="0" branch="False" />
-                <line number="148" hits="0" branch="False" />
-                <line number="149" hits="0" branch="False" />
-                <line number="150" hits="0" branch="False" />
-                <line number="151" hits="0" branch="False" />
-                <line number="155" hits="0" branch="False" />
-                <line number="156" hits="0" branch="False" />
-                <line number="157" hits="0" branch="False" />
-              </lines>
-            </method>
-          </methods>
-          <lines>
-            <line number="141" hits="0" branch="False" />
-            <line number="143" hits="0" branch="False" />
-            <line number="144" hits="0" branch="False" />
-            <line number="145" hits="0" branch="False" />
-            <line number="146" hits="0" branch="False" />
-            <line number="147" hits="0" branch="False" />
-            <line number="148" hits="0" branch="False" />
-            <line number="149" hits="0" branch="False" />
-            <line number="150" hits="0" branch="False" />
-            <line number="151" hits="0" branch="False" />
-            <line number="155" hits="0" branch="False" />
-            <line number="156" hits="0" branch="False" />
-            <line number="157" hits="0" branch="False" />
-          </lines>
-        </class>
-        <class name="EmployeeGrievanceRedressalTests.RepositoryTests.GrievanceRepositoryTest/&lt;Update_ShouldUpdateEntitySuccessfully&gt;d__10" filename="Desktop\Capstone Project\EmployeeGrievanceRedressalSolution\EmployeeGrievanceRedressalTests\RepositoryTests\GrievanceRepositoryTest.cs" line-rate="0" branch-rate="1" complexity="1">
-          <methods>
-            <method name="MoveNext" signature="()" line-rate="0" branch-rate="1" complexity="1">
-              <lines>
-                <line number="126" hits="0" branch="False" />
-                <line number="128" hits="0" branch="False" />
-                <line number="129" hits="0" branch="False" />
-                <line number="132" hits="0" branch="False" />
-                <line number="135" hits="0" branch="False" />
-                <line number="136" hits="0" branch="False" />
-                <line number="137" hits="0" branch="False" />
-              </lines>
-            </method>
-          </methods>
-          <lines>
-            <line number="126" hits="0" branch="False" />
-            <line number="128" hits="0" branch="False" />
-            <line number="129" hits="0" branch="False" />
-            <line number="132" hits="0" branch="False" />
-            <line number="135" hits="0" branch="False" />
-            <line number="136" hits="0" branch="False" />
-            <line number="137" hits="0" branch="False" />
           </lines>
         </class>
         <class name="EmployeeGrievanceRedressalTests.RepositoryTests.RatingRepositoryTest" filename="Desktop\Capstone Project\EmployeeGrievanceRedressalSolution\EmployeeGrievanceRedressalTests\RepositoryTests\RatingRepositoryTest.cs" line-rate="1" branch-rate="1" complexity="5">

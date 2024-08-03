@@ -35,10 +35,6 @@ namespace EmployeeGrievanceRedressal.Repositories
             try
             {
                 var allentities = await _context.Set<T>().ToListAsync();
-                if (allentities.Count == 0)
-                {
-                    throw new EntityNotFoundException("No Entities are found !!");
-                }
                 return allentities;
             }
             catch (Exception ex)

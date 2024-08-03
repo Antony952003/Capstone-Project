@@ -34,10 +34,6 @@ namespace EmployeeGrievanceRedressal.Repositories
             var requests =  await _context.ApprovalRequests
                 .Include(ar => ar.Employee)
                 .ToListAsync();
-            if(requests.Count == 0)
-            {
-                throw new EntityNotFoundException("No approval requests found.");
-            }
             return requests;
         }
 

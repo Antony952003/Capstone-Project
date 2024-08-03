@@ -27,11 +27,9 @@ namespace EmployeeGrievanceRedressal.Repositories
             Include(x => x.Grievance)
                 .ThenInclude(g => g.Employee)
             .Where(r => r.SolverId == solverId).ToListAsync();
-            if(ratings.Count != 0)
-            {
+
                 return ratings;
-            }
-            throw new EntityNotFoundException("No ratings found for the specified solver.");
+            
         }
     }
 

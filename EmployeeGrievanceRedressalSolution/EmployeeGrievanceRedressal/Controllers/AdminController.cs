@@ -13,7 +13,6 @@ namespace EmployeeGrievanceRedressal.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
-    [Authorize(Roles = "Admin")]
     public class AdminController : ControllerBase
     {
         private readonly IAdminService _adminService;
@@ -28,6 +27,8 @@ namespace EmployeeGrievanceRedressal.Controllers
         }
 
         [HttpGet("GetAllUsers")]
+        [Authorize(Roles = "Admin")]
+
         public async Task<ActionResult<IEnumerable<UserDTO>>> GetAllUsers()
         {
             try
@@ -46,6 +47,8 @@ namespace EmployeeGrievanceRedressal.Controllers
         }
 
         [HttpGet("GetAllApprovedUsers")]
+        [Authorize(Roles = "Admin")]
+
         public async Task<ActionResult<IEnumerable<UserDTO>>> GetAllApprovedUsers()
         {
             try
@@ -64,6 +67,8 @@ namespace EmployeeGrievanceRedressal.Controllers
         }
 
         [HttpGet("GetAllSolvers")]
+        [Authorize(Roles = "Admin")]
+
         public async Task<ActionResult<IEnumerable<UserDTO>>> GetAllSolvers()
         {
             try
@@ -81,6 +86,8 @@ namespace EmployeeGrievanceRedressal.Controllers
             }
         }
         [HttpGet("GetSolversByType")]
+        [Authorize(Roles = "Admin")]
+
         public async Task<ActionResult<IEnumerable<SolverDTO>>> GetSolversByType(string solvertype)
         {
             try
@@ -99,6 +106,8 @@ namespace EmployeeGrievanceRedressal.Controllers
         }
 
         [HttpGet("GetAllEmployees")]
+        [Authorize(Roles = "Admin")]
+
         public async Task<ActionResult<IEnumerable<UserDTO>>> GetAllEmployees()
         {
             try
@@ -117,6 +126,8 @@ namespace EmployeeGrievanceRedressal.Controllers
         }
 
         [HttpPost("AssignRoleToUser")]
+        [Authorize(Roles = "Admin")]
+
         public async Task<ActionResult<UserDTO>> AssignRole(AssignRoleDTO assignRoleDTO)
         {
             try
@@ -143,6 +154,8 @@ namespace EmployeeGrievanceRedressal.Controllers
         }
 
         [HttpPost("DeleteUserById")]
+        [Authorize(Roles = "Admin")]
+
         public async Task<ActionResult<UserDTO>> DeleteUserById(int id)
         {
             try
@@ -169,6 +182,7 @@ namespace EmployeeGrievanceRedressal.Controllers
         }
 
         [HttpGet("GetSolverById")]
+        [Authorize(Roles = "Admin, Employee")]
         public async Task<ActionResult<UserDTO>> GetSolverById(int id)
         {
             try
@@ -197,6 +211,8 @@ namespace EmployeeGrievanceRedressal.Controllers
 
 
         [HttpPost("DisApproveUserById")]
+        [Authorize(Roles = "Admin")]
+
         public async Task<IActionResult> DisApproveUserById(int id)
         {
             try
@@ -220,6 +236,8 @@ namespace EmployeeGrievanceRedressal.Controllers
         }
 
         [HttpGet("GetEmployeeById")]
+        [Authorize(Roles = "Admin, Solver")]
+
         public async Task<IActionResult> GetEmployeeById(int employeeid)
         {
             try
@@ -243,6 +261,8 @@ namespace EmployeeGrievanceRedressal.Controllers
         }
 
         [HttpGet("GetAllOpenGrievances")]
+        [Authorize(Roles = "Admin")]
+
         public async Task<IActionResult> GetAllOpenGrievances()
         {
             try
@@ -266,6 +286,8 @@ namespace EmployeeGrievanceRedressal.Controllers
         }
 
         [HttpPost("AssignOpenGrievances")]
+        [Authorize(Roles = "Admin")]
+
         public async Task<IActionResult> AssignGrievance([FromBody] AssignGrievanceDTO model)
         {
             try
@@ -292,6 +314,8 @@ namespace EmployeeGrievanceRedressal.Controllers
             }
         }
         [HttpGet("GetAllGrievancesByType")]
+        [Authorize(Roles = "Admin")]
+
         public async Task<IActionResult> GetAllGrievancesByType(string type)
         {
             try
@@ -315,6 +339,8 @@ namespace EmployeeGrievanceRedressal.Controllers
         }
 
         [HttpPut("ChangeDepartmentBySolverId")]
+        [Authorize(Roles = "Admin")]
+
         public async Task<IActionResult> ChangeDepartmentBySolverId(int solverid, string departmenttype)
         {
             try

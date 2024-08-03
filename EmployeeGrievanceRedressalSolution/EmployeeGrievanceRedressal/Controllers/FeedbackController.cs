@@ -21,7 +21,6 @@ namespace EmployeeGrievanceRedressal.Controllers
 
         [HttpPost("provide-feedback")]
         [Authorize(Roles = "Employee")]
-
         public async Task<IActionResult> ProvideFeedback([FromBody] ProvideFeedbackDTO model)
         {
             try

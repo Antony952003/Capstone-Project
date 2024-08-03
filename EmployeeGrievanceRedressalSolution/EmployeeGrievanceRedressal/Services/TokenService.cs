@@ -19,7 +19,7 @@ namespace EmployeeGrievanceRedressal.Services
 
         public TokenService(IConfiguration configuration)
         {
-            _secretKey = configuration.GetSection("TokenKey:JWT").Value;
+            _secretKey = configuration["TokenKeyJWT"];
             _key = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(_secretKey));
         }
 

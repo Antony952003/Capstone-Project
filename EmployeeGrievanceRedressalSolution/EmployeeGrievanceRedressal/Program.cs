@@ -9,6 +9,7 @@ using EmployeeGrievanceRedressal.Interfaces.RepositoryInterfaces;
 using EmployeeGrievanceRedressal.Interfaces.ServiceInterfaces;
 using EmployeeGrievanceRedressal.Models.AzureConfiguration;
 using Microsoft.Extensions.Configuration;
+using Azure.Identity;
 
 namespace EmployeeGrievanceRedressal
 {
@@ -19,7 +20,15 @@ namespace EmployeeGrievanceRedressal
             var builder = WebApplication.CreateBuilder(args);
 
 
-            builder.Services.Configure<AzureBlobStorageSettings>(builder.Configuration.GetSection("AzureBlobStorage"));
+            var keyVaultUri = new Uri($"https://{builder.Configuration["KeyVaultName"]}.vault.azure.net/");
+            builder.Configuration.AddAzureKeyVault(keyVaultUri, new DefaultAzureCredential());
+
+
+            builder.Services.Configure<AzureBlobStorageSettings>(options =>
+            {
+                options.ConnectionString = builder.Configuration["AzureBlobStorageConnectionString"];
+                options.ContainerName = builder.Configuration["AzureBlobStorageContainerName"];
+            });
 
             builder.Services.AddSingleton<BlobStorageService>();
 
@@ -28,7 +37,7 @@ namespace EmployeeGrievanceRedressal
 
             // Add DbContext configuration
             builder.Services.AddDbContext<EmployeeGrievanceContext>(options =>
-                options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection")));
+                options.UseSqlServer(builder.Configuration["DefaultConnection"]));
 
             #region Repositories
             builder.Services.AddScoped<IUserRepository, UserRepository>();
@@ -63,7 +72,7 @@ namespace EmployeeGrievanceRedressal
                         ValidateAudience = false,
                         ValidateLifetime = true,
                         ValidateIssuerSigningKey = true,
-                        IssuerSigningKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(builder.Configuration["TokenKey:JWT"]))
+                        IssuerSigningKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(builder.Configuration["TokenKeyJWT"]))
                     };
                 });
 

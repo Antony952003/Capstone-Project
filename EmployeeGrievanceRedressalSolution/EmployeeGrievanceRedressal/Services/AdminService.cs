@@ -246,7 +246,7 @@ namespace EmployeeGrievanceRedressal.Services
             try
             {
                 var solvers = await GetAllSolversAsync();
-                solvers = solvers.Where(x => x.GrievanceDepartmentType == grievanceType);
+                solvers = solvers.Where(x => x.GrievanceDepartmentType == grievanceType && x.IsAvailable == true);
                 return solvers.ToList();
             }
             catch(EntityNotFoundException e)
