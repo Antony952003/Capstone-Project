@@ -62,7 +62,8 @@
               "RelativeToolTip": "EmployeeGrievanceRedressal\\Services\\BlobStorageService.cs",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-08-04T03:48:07.743Z"
+              "WhenOpened": "2024-08-04T03:48:07.743Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
@@ -74,7 +75,8 @@
               "RelativeToolTip": "EmployeeGrievanceRedressal\\Services\\TokenService.cs",
               "ViewState": "AQIAAC0AAAAAAAAAAAAYwBgAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-08-04T03:37:17.369Z"
+              "WhenOpened": "2024-08-04T03:37:17.369Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
@@ -97,7 +99,7 @@
               "RelativeDocumentMoniker": "EmployeeGrievanceRedressal\\appsettings.json",
               "ToolTip": "C:\\Users\\VC\\Desktop\\Capstone Project\\EmployeeGrievanceRedressalSolution\\EmployeeGrievanceRedressal\\appsettings.json",
               "RelativeToolTip": "EmployeeGrievanceRedressal\\appsettings.json",
-              "ViewState": "AQIAAAMAAAAAAAAAAAAAABkAAAAQAAAA",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAABcAAAAQAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
               "WhenOpened": "2024-08-03T18:16:33.862Z",
               "EditorCaption": ""
@@ -110,7 +112,7 @@
               "RelativeDocumentMoniker": "EmployeeGrievanceRedressal\\Program.cs",
               "ToolTip": "C:\\Users\\VC\\Desktop\\Capstone Project\\EmployeeGrievanceRedressalSolution\\EmployeeGrievanceRedressal\\Program.cs",
               "RelativeToolTip": "EmployeeGrievanceRedressal\\Program.cs",
-              "ViewState": "AQIAAHYAAAAAAAAAAAAAAI0AAAANAAAA",
+              "ViewState": "AQIAAAMAAAAAAAAAAAAAABEAAAAuAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-08-03T18:06:52.887Z",
               "EditorCaption": ""

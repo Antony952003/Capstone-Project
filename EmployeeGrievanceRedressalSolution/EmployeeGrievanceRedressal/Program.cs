@@ -141,7 +141,7 @@ namespace EmployeeGrievanceRedressal
                 app.UseSwaggerUI();
             }
 
-            app.UseHttpsRedirection();
+            //app.UseHttpsRedirection();
 
             app.UseCors("MyCors");
 
