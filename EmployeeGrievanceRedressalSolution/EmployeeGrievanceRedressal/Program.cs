@@ -20,24 +20,37 @@ namespace EmployeeGrievanceRedressal
             var builder = WebApplication.CreateBuilder(args);
 
 
-            var keyVaultUri = new Uri($"https://{builder.Configuration["KeyVaultName"]}.vault.azure.net/");
-            builder.Configuration.AddAzureKeyVault(keyVaultUri, new DefaultAzureCredential());
+            //var keyVaultUri = new Uri($"https://{builder.Configuration["KeyVaultName"]}.vault.azure.net/");
+            //builder.Configuration.AddAzureKeyVault(keyVaultUri, new DefaultAzureCredential());
 
+
+            //builder.Services.Configure<AzureBlobStorageSettings>(options =>
+            //{
+            //    options.ConnectionString = builder.Configuration["AzureBlobStorage:"];
+            //    options.ContainerName = builder.Configuration["AzureBlobStorageContainerName"];
+            //});
+
+            //builder.Services.AddSingleton<BlobStorageService>();
+
+
+            //builder.Services.AddControllers();
+
+            //// Add DbContext configuration
+            //builder.Services.AddDbContext<EmployeeGrievanceContext>(options =>
+            //    options.UseSqlServer(builder.Configuration["DefaultConnection"]));
 
             builder.Services.Configure<AzureBlobStorageSettings>(options =>
             {
-                options.ConnectionString = builder.Configuration["AzureBlobStorageConnectionString"];
-                options.ContainerName = builder.Configuration["AzureBlobStorageContainerName"];
+                options.ConnectionString = builder.Configuration["AzureBlobStorage:ConnectionString"];
+                options.ContainerName = builder.Configuration["AzureBlobStorage:ContainerName"];
             });
 
             builder.Services.AddSingleton<BlobStorageService>();
-
-
             builder.Services.AddControllers();
 
             // Add DbContext configuration
             builder.Services.AddDbContext<EmployeeGrievanceContext>(options =>
-                options.UseSqlServer(builder.Configuration["DefaultConnection"]));
+                options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection")));
 
             #region Repositories
             builder.Services.AddScoped<IUserRepository, UserRepository>();
@@ -72,7 +85,7 @@ namespace EmployeeGrievanceRedressal
                         ValidateAudience = false,
                         ValidateLifetime = true,
                         ValidateIssuerSigningKey = true,
-                        IssuerSigningKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(builder.Configuration["TokenKeyJWT"]))
+                        IssuerSigningKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(builder.Configuration["TokenKey:JWT"]))
                     };
                 });
 
